@@ -1,0 +1,15 @@
+{
+    "name": "onem/cogip-challenge",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Julie",
+            "email": "juptsr.becode@gmail.com"
+        }
+    ],
+    "require": {}
+}
