@@ -20,7 +20,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Raviga</td>
+            <td><a href="#">Raviga</a></td>
             <td>BE 0876654 665</td>
             <td></td>
           </tr>
@@ -43,7 +43,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Belgalol</td>
+            <td><a href="#">Belgalol</a></td>
             <td>BE 0876654 665</td>
             <td>Belgique</td>
           </tr>
