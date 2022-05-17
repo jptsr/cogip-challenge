@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h1>List Companies</h1>
+<!-- <h1>List Companies</h1> -->
 <div class="container ">
   <div class="row  mb-5 mt-5">
     <h2 class="text-center">COGIP : Annuaire des sociétés</h2>
