@@ -25,19 +25,30 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav mb-2 gap-3 ">
                     <li class="nav-item  " >
-                        <a class="nav-link active"  aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link active"  aria-current="page" href="/menu">Accueil</a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link" href="#">Factures</a>
+                        <a class="nav-link" href="/liste-factures">Factures</a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link"  href="#">Sociétés</a>
+                        <a class="nav-link"  href="/liste-entreprises">Sociétés</a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link"  href="#">Contacts</a>
+                        <a class="nav-link"  href="/liste-contacts">Contacts</a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link"  href="#">Connexion</a>
+                        <a class="nav-link"  href="/connexion">Connexion</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/nouveau-contact">Nouveau contact</a></li>
+                            <li><a class="dropdown-item" href="/nouvelle-facture">Nouvelle facture</a></li>
+                            <li><a class="dropdown-item" href="/nouvelle-entreprise">Nouvelle société</a></li>
+                        </ul>
                     </li>
         
                 </ul>
