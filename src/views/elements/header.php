@@ -40,7 +40,7 @@
                         <a class="nav-link"  href="/connexion">Connexion</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                             Admin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,4 +56,4 @@
         </div>
         </nav> 
         </header>
-        <p>Je suis le header user</p>
+        <p>Je suis le header</p>
