@@ -19,9 +19,10 @@
           </tr>
         </thead>
         <tbody>
+          <!-- loop  -->
           <tr>
-            <td><a href="#">Raviga</a></td>
-            <td>BE 0876654 665</td>
+            <td><a href="#"></a></td>
+            <td></td>
             <td></td>
           </tr>
         </tbody>
@@ -43,9 +44,9 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#">Belgalol</a></td>
-            <td>BE 0876654 665</td>
-            <td>Belgique</td>
+            <td><a href="#"></a></td>
+            <td></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
