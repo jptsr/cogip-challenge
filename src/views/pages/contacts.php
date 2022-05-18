@@ -8,7 +8,7 @@
   </div>
   
   <div class="row justify-content-center ">
-    <div class="col-8 ">
+    <div class="col-8 mt-5 ">
       <table class="table table-bordered">
       <!-- Afficher la liste des contacts -->
         <thead>
