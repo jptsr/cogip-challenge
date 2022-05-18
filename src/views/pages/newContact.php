@@ -29,7 +29,7 @@
         </div>
 		    <div class="mb-3">
 			    <label for="société" class="form-label">Société</label>
-			    <select class="form-select" name="">
+			    <select class="form-select fw-light" name="">
             <!-- loop -->
 				    <option value="2">Société1</option>
 				    
