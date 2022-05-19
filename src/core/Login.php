@@ -2,7 +2,6 @@
 namespace app\src\core;
 
 use app\src\models\GetData;
-use Error;
 
 class Login
 {

@@ -22,4 +22,20 @@ class GetData
         $stmt->closeCursor();
         return $user_data;
     }
+
+    public function getList(string $table_name, string $index_order, string $order, int $quantity) : array
+    {
+        $stmt = $this->database->prepare("SELECT * FROM $table_name ORDER BY $index_order $order");
+        $stmt->execute();
+        while( $data = $stmt->fetch(PDO::FETCH_ASSOC) ) {
+            $required_data[] = $data;
+
+            if ( count($required_data) == $quantity ) {
+                $stmt->closeCursor();
+                return $required_data;
+            }
+        }
+        $stmt->closeCursor();
+        return $required_data;
+    }
 }
