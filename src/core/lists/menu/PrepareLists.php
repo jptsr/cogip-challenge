@@ -1,5 +1,5 @@
 <?php
-namespace app\src\core\lists;
+namespace app\src\core\lists\menu;
 
 use app\src\models\GetData;
 

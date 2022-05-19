@@ -1,22 +1,17 @@
 <?php
 namespace app\src\controllers;
 
-use app\src\core\lists\PrepareLists;
+use app\src\core\lists\menu\CallListsMenu;
+use app\src\core\lists\menu\PrepareLists;
 
 class HomeController extends Controller
 {
     public function displayView()
     {
         session_start();
-        
-        $getCompaniesList = new PrepareLists();
-        $_SESSION['list_last_companies'] = $getCompaniesList->prepareCompaniesListMenu();
 
-        $getContactsList = new PrepareLists();
-        $_SESSION['list_last_contacts'] = $getContactsList->prepareContactsListMenu();
-
-        $getInvoicesList = new PrepareLists();
-        $_SESSION['list_last_invoices'] = $getInvoicesList->prepareInvoicesListMenu();
+        $callLists = new CallListsMenu();
+        $callLists->call();
         
         return $this->views('welcome');
     }
