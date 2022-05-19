@@ -1,6 +1,51 @@
 <?php ob_start(); ?>
+<div class="container">
+    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+    <p>Bonjour !</p> 
 
-<h1>Welcome non admin</h1>
+    <table class= "table table-bordered caption-top" >
+        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
+        <thead>
+            <tr>
+                <th  class="text-center fw-bold " >Numéro facture</th>
+                <th class="text-center fw-bold" >Dates</th>
+                <th class="text-center fw-bold" >Société</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+
+    <table class= "table table-bordered caption-top" >
+        <caption  class= "mb-3 fs-2"   >Dernières contact :</caption>
+        <thead>
+            <tr>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >Téléphone</th>
+                <th class="text-center fw-bold" >e-mail</th>
+                <th class="text-center fw-bold" >Société</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <table class= "table table-bordered caption-top" >
+        <caption class= "mb-3 fs-2"  >Dernières sociétés :</caption>
+        <thead>
+            <tr>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >TVA</th>
+                <th class="text-center fw-bold" >Pays</th>
+                <th class="text-center fw-bold" >Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
 
 <?php
 $content = ob_get_clean();
