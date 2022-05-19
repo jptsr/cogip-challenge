@@ -10,16 +10,20 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-6">
-      <form action="" method="post">
+      <form action="/connexion" method="post">
         <div class="mb-3">
           <label for="identifiant" class="form-label">Votre identifiant</label>
-          <input type="text" class="form-control" id="" name="" aria-describedby="identifiant" placeholder="Jean-Christian">
+          <input type="text" class="form-control" id="" name="username" aria-describedby="identifiant" placeholder="Jean-Christian">
+          <?= $empty_username = ( empty($_SESSION['empty_username']) ) ? '' : $_SESSION['empty_username'] ; ?>
+          <?= $wrong_username = ( empty($_SESSION['wrong_username']) ) ? '' : $_SESSION['wrong_username'] ; ?>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Votre mot de passe</label>
-          <input type="password" class="form-control" id="password" name="">
+          <input type="password" class="form-control" id="password" name="pwd">
+          <?= $empty_pwd = ( empty($_SESSION['empty_password']) ) ? '' : $_SESSION['empty_password'] ; ?>
+          <?= $wrong_pwd = ( empty($_SESSION['wrong_password']) ) ? '' : $_SESSION['wrong_password'] ; ?>
         </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" name="login">Submit</button>
     </form>
     </div>
     
