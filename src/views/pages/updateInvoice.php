@@ -1,6 +1,47 @@
 <?php ob_start(); ?>
 
-<h1>Update Invoice</h1>
+<!-- <h1>Update Invoice</h1> -->
+
+<div class="container ">
+  <div class="row align-items-center">
+    <h2 class="mb-5 mt-5 text-center">Modification de la facture</h2>
+  </div>
+  
+  <div class="row justify-content-center py-5">
+    <div class="col-6">
+      <form action="" method="post">
+
+        <div class="mb-3">
+			    <label for="numeroFacture" class="form-label">Numéro de facture</label>
+			    <input type="text" class="form-control" name="" value="">
+		    </div>
+        <div class="mb-3">
+			    <label for="dateFacture" class="form-label">Date de la facture</label>
+			    <input type="date" class="form-control" name="" value="">
+		    </div>       
+		    <div class="mb-3">
+			    <label for="société" class="form-label">Société</label>
+			    <select class="form-select fw-light" name="">
+            <!-- loop -->
+				    <option value="1">s1</option>
+			    </select>
+		    </div>
+        <div class="mb-3">
+			    <label for="personContact" class="form-label">Personne de contact pour la facture</label>
+			    <select class="form-select fw-light" name="">
+            
+				    <option value="1">p1</option>
+			    </select>
+		    </div>
+        
+        <div class="d-grid  justify-content-end">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>     
+      </form>
+    </div>
+    
+  </div>
+</div>
 
 <?php 
 $content = ob_get_clean();
