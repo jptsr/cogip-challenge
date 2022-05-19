@@ -4,66 +4,48 @@
     <p>Bonjour !</p> 
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2">Dernières factures :</caption>
+        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
         <thead>
             <tr>
-                <th class="text-center" >Numéro facture</th>
-                <th class="text-center" >Dates</th>
-                <th class="text-center" >Société</th>
+                <th  class="text-center fw-bold " >Numéro facture</th>
+                <th class="text-center fw-bold" >Dates</th>
+                <th class="text-center fw-bold" >Société</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table> 
-
-
-    <table class= "table table-bordered caption-top">
-        <caption class= "mb-3 fs-2">Dernières contact :</caption>
-        <thead>
-            <tr>
-                <th class="text-center" >Nom </th>
-                <th class="text-center" >Téléphone</th>
-                <th class="text-center" >e-mail</th>
-                <th class="text-center" >Société</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        
         </tbody>
     </table>
 
-    <table class= "table table-bordered caption-top">
-        <caption class= "mb-3 fs-2">Dernières sociétés :</caption>
+    <table class= "table table-bordered caption-top" >
+        <caption  class= "mb-3 fs-2"   >Dernières contact :</caption>
         <thead>
             <tr>
-                <th class="text-center" >Nom </th>
-                <th class="text-center" >TVA</th>
-                <th class="text-center" >Pays</th>
-                <th class="text-center" >Type</th>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >Téléphone</th>
+                <th class="text-center fw-bold" >e-mail</th>
+                <th class="text-center fw-bold" >Société</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            
         </tbody>
     </table>
-</div>
 
-
+    <table class= "table table-bordered caption-top" >
+        <caption class= "mb-3 fs-2"  >Dernières sociétés :</caption>
+        <thead>
+            <tr>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >TVA</th>
+                <th class="text-center fw-bold" >Pays</th>
+                <th class="text-center fw-bold" >Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
 
 <?php
 $content = ob_get_clean();
