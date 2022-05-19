@@ -4,30 +4,38 @@
 <p>N° TVA : <span></span> </p>
 <p>Type : Client</p>
 
-<table>
-    <caption>Personnes de contact</caption>
+<table class= "table table-bordered caption-top">
+
+    <caption class= "mb-3 fs-2">Personnes de contact</caption>
     <thead>
         <tr>
-            <th>Nom</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <th class="text-center fw-bold" > Nom</th>
+            <th class="text-center fw-bold" >Phone</th>
+            <th class="text-center fw-bold" >Email</th>
         </tr>
     </thead>
     <tbody>
-
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
     </tbody>
 </table>
 
-<table>
-    <caption>Factures</caption>
+<table class= "table table-bordered caption-top">
+    <caption class= "mb-3 fs-2" >Factures</caption>
     <thead>
         <tr>
-            <th>N° facture</th>
-            <th>Date</th>
-            <th>Personne de contact</th>
+            <th class="text-center fw-bold" >N° facture</th>
+            <th class="text-center fw-bold" >Date</th>
+            <th class="text-center fw-bold" >Personne de contact</th>
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td></td>
+        </tr>
         
     </tbody>
 </table>
