@@ -25,7 +25,7 @@
 		    </div>
         
 		    <div class="mb-3">
-			    <label for="typeSociété" class="form-label">Société</label>
+			    <label for="typeSociété" class="form-label">Type de société</label>
 			    <select class="form-select fw-light" name="">
 				    <option value="fournisseur">Fournisseur</option>
 				    <option value="fournisseur">Client</option>
