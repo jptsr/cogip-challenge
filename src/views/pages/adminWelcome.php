@@ -44,7 +44,7 @@
 </table>
 
 <table class= "table table-bordered caption-top">
-    <caption class= "mb-3 fs-2" >Dérnieres factures :</caption>
+    <caption class= "mb-3 fs-2" >Dérnieres société :</caption>
     <thead>
         <tr>
             <th class="text-center" >Nom</th>
