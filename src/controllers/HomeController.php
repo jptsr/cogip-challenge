@@ -11,6 +11,12 @@ class HomeController extends Controller
         
         $getCompaniesList = new PrepareLists();
         $_SESSION['list_last_companies'] = $getCompaniesList->prepareCompaniesListMenu();
+
+        $getContactsList = new PrepareLists();
+        $_SESSION['list_last_contacts'] = $getContactsList->prepareContactsListMenu();
+
+        $getInvoicesList = new PrepareLists();
+        $_SESSION['list_last_invoices'] = $getInvoicesList->prepareInvoicesListMenu();
         
         return $this->views('welcome');
     }

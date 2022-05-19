@@ -1,7 +1,7 @@
 <?php
 namespace app\src\core\show;
 
-class ShowContact
+class ShowContacts
 {
     public static function listContacts(string $name, string $phone_nb, string $email, string $company)
     {
