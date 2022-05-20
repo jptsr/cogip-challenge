@@ -2,10 +2,10 @@
 
 <div class="container ">
   <div class="row align-items-center">
-    <h2 class="mb-5 mt-5 text-center">Bienvenue à la COGIP</h2>
+    <h1 class="mb-5 mt-5 text-center">Bienvenue à la COGIP</h1>
   </div>
   <div class="row align-items-center">
-    <h3 class="mb-5 mt-3 text-center"> Bienvenue dans l’espace de connexion de la COGIP</h3>
+    <p  class="mb-5 mt-3 text-center login_text"> Bienvenue dans l’espace de connexion de la COGIP</p>
   </div>
   <div class="row justify-content-center">
     <div class="col-6">

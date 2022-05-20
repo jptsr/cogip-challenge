@@ -3,7 +3,7 @@
 <!-- <h1>List Companies</h1> -->
 <div class="container ">
   <div class="row  mb-5 mt-5">
-    <h2 class="text-center">COGIP : Annuaire des sociétés</h2>
+    <h1 class="text-center">COGIP : Annuaire des sociétés</h1>
   </div>
   
   <div class="row justify-content-center ">
