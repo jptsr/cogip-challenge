@@ -1,9 +1,9 @@
         
 
-    <footer class="mon_footer">
-        <div class="container mt-5">
+    <footer class="mon_footer fixed-bottom">
+        <div class="container">
             <div class="row my-3">
-                <ul class="nav justify-content-center  bg-light">
+                <ul class="nav justify-content-center ">
                     <li class="nav-item">
                         <a class="nav-link link-dark active" aria-current="page" href="/menu">Accueil</a>
                     </li>
@@ -28,9 +28,9 @@
             <div class="row">
                 <div class="col-4 d-grid gap-2 d-md-flex ">
                     <img src="./assets/img/copyright.svg" alt="copyright" width="20" height="20"> 
-                    <p>COGIP</p>
+                    <p class="footer_logo_text">COGIP</p>
                 </div>
-                <div class="col-4 text-center">
+                <div class="col-4 text-center footer_slogan">
                     Vive la COGIP !
                 </div>
                 <div class="col-4 text-end">
