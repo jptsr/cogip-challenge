@@ -10,7 +10,7 @@ INNER JOIN companies
 ON invoices.id_company = companies.id_company 
 ORDER BY invoices.date ASC;
 
-SELECT companies.name, companies.country, companies.VAT, company_type.name 
+SELECT companies.name, companies.country, companies.VAT, company_type.type 
 FROM companies
 INNER JOIN company_type 
 ON companies.id_type = company_type.id_type
