@@ -93,4 +93,8 @@ caption {
   background-color: #C2CFF2;
   border: none;
 }
+
+.admin_btn_link {
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
