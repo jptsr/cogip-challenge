@@ -7,7 +7,7 @@ class ShowCompanies
     {
         echo <<<HTML
             <tr>
-                <td>$name</td>
+                <td><a href="/liste-entreprises/details-entreprise">$name</a></td> 
                 <td>$vat_nb</td>
                 <td>$country</td>
                 <td>$type</td>
