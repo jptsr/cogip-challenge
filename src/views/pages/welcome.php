@@ -21,7 +21,7 @@ use app\src\core\show\ShowInvoices;
         <tbody>
             <?php 
                 foreach ( $_SESSION['list_last_invoices'] as $value ) {
-                    ShowInvoices::listInvoices($value[0], $value[1], $value[2]);
+                    ShowInvoices::listInvoices($value['facture_number'], $value['date'], $value['name']);
                 }
             ?>
         </tbody>

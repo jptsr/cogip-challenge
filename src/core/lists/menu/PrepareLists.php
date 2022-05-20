@@ -30,8 +30,15 @@ class PrepareLists
     public function prepareInvoicesListMenu()
     {
         $invoices = new GetData();
-        $list = $invoices->getList('invoices', 'date', 'ASC', 5);
+        $tables = ['invoices', 'companies'];
+        $list = $invoices->getInnerJoinList(
+            $tables, 'INNER JOIN',
+            'invoices.id_company', 'companies.id_company',
+            'invoices.date', 'ASC', 5,
+            'invoices.facture_number', 'invoices.date', 'companies.name'
+        );
 
-        return CreateListLastInvoices::createList($list);
+        return $list;
+        // return CreateListLastInvoices::createList($list);
     }
 }
