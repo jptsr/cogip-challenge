@@ -76,4 +76,15 @@ caption {
 .login_text {
   font-size: 20px;
 }
+
+.form_style {
+  background-color: #54489B;
+  color: #B2DCFD;
+  border-radius: 5px;
+  width: 700px;
+}
+
+.forme_btn {
+  background-color: #A60F34;
+}
 /*# sourceMappingURL=style.css.map */

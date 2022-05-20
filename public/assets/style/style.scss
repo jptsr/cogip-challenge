@@ -1,6 +1,7 @@
 $color_bg: #54489B;
 $color_text: #B2DCFD;
 $color_bg_all: #F3F3F3;
+$color_btn: #A60F34;
 
 body {
  
@@ -74,4 +75,13 @@ caption{
 }
 .login_text{
   font-size: 20px;
+}
+.form_style{
+  background-color: $color_bg;
+  color: $color_text;
+  border-radius: 5px;
+  width: 700px;
+}
+.forme_btn{
+  background-color: $color_btn;
 }
