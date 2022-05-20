@@ -1,6 +1,7 @@
 <?php
 namespace app\src\core\lists\menu;
 
+use app\src\core\lists\ModifiedDataForDisplay;
 use app\src\models\GetData;
 
 class PrepareLists
@@ -10,7 +11,10 @@ class PrepareLists
         $companies = new GetData();
         $list = $companies->getList('companies', 'id_company', 'DESC', 5);
 
-        return CreateListLastCompanies::createList($list);
+        $modified_data = new ModifiedDataForDisplay($list);
+        $new_list = $modified_data->modifiedVatNumber();
+        
+        return CreateListLastCompanies::createList($new_list);
     }
 
     public function prepareContactsListMenu()
@@ -24,7 +28,10 @@ class PrepareLists
             'contacts.lastname', 'contacts.firstname', 'contacts.phone_number', 'contacts.email', 'companies.name'
         );
 
-        return $list;
+        $modified_data = new ModifiedDataForDisplay($list);
+        $new_list = $modified_data->modifiedPhoneNumber();
+
+        return $new_list;
     }
 
     public function prepareInvoicesListMenu()
@@ -38,7 +45,9 @@ class PrepareLists
             'invoices.facture_number', 'invoices.date', 'companies.name'
         );
 
-        return $list;
-        // return CreateListLastInvoices::createList($list);
+        $modified_data = new ModifiedDataForDisplay($list);
+        $new_list = $modified_data->modifiedDate();
+
+        return $new_list;
     }
 }
