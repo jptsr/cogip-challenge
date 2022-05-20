@@ -16,9 +16,15 @@ class PrepareLists
     public function prepareContactsListMenu()
     {
         $contacts = new GetData();
-        $list = $contacts->getList('contacts', 'id_contact', 'DESC', 5);
+        $tables = ['contacts', 'companies'];
+        $list = $contacts->getInnerJoinList(
+            $tables, 'INNER JOIN', 
+            'contacts.id_company', 'companies.id_company', 
+            'contacts.id_contact', 'DESC', 5, 
+            'contacts.lastname', 'contacts.firstname', 'contacts.phone_number', 'contacts.email', 'companies.name'
+        );
 
-        return CreateListLastContacts::createList($list);
+        return $list;
     }
 
     public function prepareInvoicesListMenu()

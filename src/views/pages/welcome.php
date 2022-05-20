@@ -38,13 +38,9 @@ use app\src\core\show\ShowInvoices;
             </tr>
         </thead>
         <tbody>
-            <?php 
+            <?php
                 foreach ( $_SESSION['list_last_contacts'] as $value ) {
-                    ShowContacts::listContacts($value[0], $value[1], $value[2], $value[3]);
-                    // echo $value[0];
-                    // echo $value[1];
-                    // echo $value[2];
-                    // echo $value[3];
+                    ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name']);
                 }
             ?>
         </tbody>
