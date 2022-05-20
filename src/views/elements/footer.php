@@ -1,6 +1,6 @@
         
 
-    <footer class="mon_footer fixed-bottom">
+    <footer class="mon_footer">
         <div class="container">
             <div class="row my-3">
                 <ul class="nav justify-content-center ">
