@@ -28,7 +28,7 @@
             <nav class="mon_header navbar  navbar-expand-lg   ">
                 <div class="container ">
                     <a class="navbar-brand" href="#">
-                        <img src="./assets/img/logo.svg" alt="Logo" width="30" height="24">
+                        <img src="./assets/img/logo.svg" alt="Logo" width="35" height="35">
                         <span class="header_logo_text">COGIP</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

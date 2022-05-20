@@ -1,7 +1,7 @@
         
 
     <footer class="mon_footer">
-        <div class="container-fluid">
+        <div class="container mt-5">
             <div class="row my-3">
                 <ul class="nav justify-content-center  bg-light">
                     <li class="nav-item">
@@ -34,9 +34,9 @@
                     Vive la COGIP !
                 </div>
                 <div class="col-4 text-end">
-                    <a href="#" target="_blank" class="btn btn-outline-light"><img src="./assets/img/facebook.svg" alt="facebook" width="25" height="25"></a>
-                    <a href="#" target="_blank" class="btn btn-outline-light"><img src="./assets/img/twitter.svg" alt="twitter" width="25" height="25"></a>
-                    <a href="#" target="_blank" class="btn btn-outline-light"><img src="./assets/img/linkedin.svg" alt="linkedin" width="25" height="25"></a>
+                    <a href="#" target="_blank" class="btn btn_footer"><img src="./assets/img/facebook.svg" alt="facebook" width="25" height="25"></a>
+                    <a href="#" target="_blank" class="btn btn_footer"><img src="./assets/img/twitter.svg" alt="twitter" width="25" height="25"></a>
+                    <a href="#" target="_blank" class="btn btn_footer"><img src="./assets/img/linkedin.svg" alt="linkedin" width="25" height="25"></a>
                 </div>
             </div>
         </div>
