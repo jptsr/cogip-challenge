@@ -14,14 +14,20 @@
         <div class="mb-3">
 			    <label for="nom" class="form-label">Nom</label>
 			    <input type="text" class="form-control" name="nom" value="">
+          <!-- c'est ici que je dois faire une boucle pour les erreurs mais attention, il faut le faire pour chaque champ -->
+          <?= $errorCar= (in_array('nom', $_SESSION)) ? '' : 'Il y a un soucis avec le nom :('; ?>
+          <?= var_dump($_SESSION) // il y a rien dans la session ?>
 		    </div>
         <div class="mb-3">
 			    <label for="prenom" class="form-label">Prénom</label>
 			    <input type="text" class="form-control" name="prenom" value="">
+          <?= $errorCar= (in_array('prenom', $_SESSION)) ? '' : 'Il y a un soucis avec le prénom :('; ?>
+
 		    </div>
         <div class="mb-3">
 			    <label for="phone" class="form-label">Phone</label>
 			    <input type="tel" class="form-control" name="phone">
+          <?= $errorCar= (in_array('prenom', $_SESSION)) ? '' : 'Il y a un soucis avec le prénom :('; ?>
 		    </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
