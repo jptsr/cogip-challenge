@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="container ">
+<div class="container mb-5">
   <div class="row align-items-center">
     <h1 class="mb-5 mt-5 text-center">Bienvenue à la COGIP</h1>
   </div>
