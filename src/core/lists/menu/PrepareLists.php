@@ -9,12 +9,19 @@ class PrepareLists
     public function prepareCompaniesListMenu()
     {
         $companies = new GetData();
-        $list = $companies->getList('companies', 'id_company', 'DESC', 5);
+        // $list = $companies->getList('companies', 'id_company', 'DESC', 5);
+        $tables = ['companies', 'company_type'];
+        $list = $companies->getInnerJoinList(
+            $tables, 'INNER JOIN',
+            'companies.id_type', 'company_type.id_type',
+            'companies.id_company ', 'DESC', 5,
+            'companies.name',' companies.country', 'companies.VAT', 'company_type.type'
+        );
 
         $modified_data = new ModifiedDataForDisplay($list);
         $new_list = $modified_data->modifiedVatNumber();
-        
-        return CreateListLastCompanies::createList($new_list);
+
+        return $new_list;
     }
 
     public function prepareContactsListMenu()

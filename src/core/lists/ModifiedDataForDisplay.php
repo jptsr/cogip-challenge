@@ -37,7 +37,8 @@ class ModifiedDataForDisplay
     public function modifiedVatNumber() : array
     {
         for ($i=0; $i < count($this->array); $i++) {
-            $this->array[$i]['VAT'] = 5;
+            $this->array[$i]['VAT'] = explode(" ", $this->array[$i]['VAT']);
+            $this->array[$i]['VAT'] = $this->array[$i]['VAT'][0] . $this->array[$i]['VAT'][1] . $this->array[$i]['VAT'][2] . $this->array[$i]['VAT'][3];
         }
 
         return $this->array;
