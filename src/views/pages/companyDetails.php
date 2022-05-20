@@ -7,7 +7,7 @@
 
     <table class= "table table-bordered caption-top">
 
-        <caption class= "mb-3 fs-2">Personnes de contact</caption>
+        <caption class= "mb-3 ">Personnes de contact</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" > Nom</th>
@@ -25,7 +25,7 @@
     </table>
 
     <table class= "table table-bordered caption-top">
-        <caption class= "mb-3 fs-2" >Factures</caption>
+        <caption class= "mb-3 " >Factures</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >N° facture</th>

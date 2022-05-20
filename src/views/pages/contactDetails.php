@@ -8,7 +8,7 @@
         
     <table class= "table table-bordered caption-top">
 
-        <caption class= "mb-3 fs-2"> Contact pour les factures :</caption>
+        <caption class= "mb-3 "> Contact pour les factures :</caption>
         <thead>
             <tr>
                 <th class=" fw-bold" >N°facture</th>

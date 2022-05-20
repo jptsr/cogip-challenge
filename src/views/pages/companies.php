@@ -10,7 +10,7 @@
     <div class="col-8 ">
       <table class="table table-bordered caption-top">
       <!-- Afficher la liste des clients -->
-        <caption class="mb-3 fs-2">Clients</caption>
+        <caption class="mb-3 ">Clients</caption>
         <thead>
           <tr>
             <th class="text-center fw-bold"> Nom</th>
@@ -33,7 +33,7 @@
   <div class="row justify-content-center ">
     <div class="col-8 ">
       <table class="table table-bordered caption-top">
-        <caption class="mb-3 mt-5 fs-2">Fournisseurs</caption>
+        <caption class="mb-3 mt-5 ">Fournisseurs</caption>
       <!-- Afficher la liste des Fournisseurs  -->
         <thead>
           <tr>

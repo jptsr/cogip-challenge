@@ -9,7 +9,7 @@
     <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouvelle société</button>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
+        <caption class= "mb-3 " >Dernières factures :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Numéro facture</th>
@@ -31,7 +31,7 @@
 
 
     <table class= "table table-bordered caption-top mt-5" >
-        <caption class= "mb-3 fs-2" >Dernières contact :</caption>
+        <caption class= "mb-3" >Dernières contact :</caption>
         <thead>
             <tr>
                 <th class="text-center">Nom</th>
@@ -53,7 +53,7 @@
     </table>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dèrnieres société :</caption>
+        <caption class= "mb-3 " >Dèrnieres société :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Nom</th>

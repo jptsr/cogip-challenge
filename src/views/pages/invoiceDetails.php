@@ -1,10 +1,10 @@
 <?php ob_start(); ?>
     <div class="container">
 
-    <h1>Facture : <span></span> </h1>
+    <h1 class="my-5 text-center" >Facture : <span></span> </h1>
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2" >Société liée à la facture</caption>
+        <caption class= "mb-3 " >Société liée à la facture</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom</th>
@@ -24,7 +24,7 @@
 
 
     <table class= "table table-bordered caption-top" >
-        <caption>Personne de contact</caption>
+        <caption class= "mb-3" >Personne de contact</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom</th>
