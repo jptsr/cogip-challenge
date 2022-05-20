@@ -4,9 +4,9 @@
     <p>Bonjour Jean Christian !</p>
     <p>Que souhaitez-vous faire aujourd'hui ?</p>
 
-    <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle facture  </button>
-    <button class=" mx-3" ><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouveau contact </button>
-    <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouvelle société</button>
+    <button class="admin_add_btn"><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle facture  </button>
+    <button class="admin_add_btn mx-3" ><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouveau contact </button>
+    <button class="admin_add_btn"><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle société</button>
 
     <table class= "table table-bordered caption-top mt-5">
         <caption class= "mb-3 " >Dernières factures :</caption>
