@@ -4,7 +4,7 @@
     <p>Bonjour !</p> 
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
+        <caption class= "mb-3" >Dernières factures :</caption>
         <thead>
             <tr>
                 <th  class="text-center fw-bold " >Numéro facture</th>
@@ -22,7 +22,7 @@
     </table>
 
     <table class= "table table-bordered caption-top" >
-        <caption  class= "mb-3 fs-2"   >Dernières contact :</caption>
+        <caption  class= "mb-3"   >Dernières contact :</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom </th>
@@ -42,7 +42,7 @@
     </table>
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2"  >Dernières sociétés :</caption>
+        <caption class= "mb-3 "  >Dernières sociétés :</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom </th>
