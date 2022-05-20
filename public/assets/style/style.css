@@ -87,4 +87,10 @@ caption {
 .forme_btn {
   background-color: #A60F34;
 }
+
+.admin_add_btn {
+  padding: 5px;
+  background-color: #C2CFF2;
+  border: none;
+}
 /*# sourceMappingURL=style.css.map */
