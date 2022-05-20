@@ -1,4 +1,37 @@
 body {
-  color: red;
+  font-family: 'Fira Mono', monospace;
+  background-color: #F3F3F3;
+}
+
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 32px;
+}
+
+.mon_header {
+  font-family: 'Fira Mono', monospace;
+  font-size: 15px;
+  background: #ebf1f6;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #ebf1f6), color-stop(39%, #abd3ee), color-stop(92%, #ebf1f6));
+  background: linear-gradient(to right, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f6', endColorstr='#ebf1f6', GradientType=1);
+}
+
+.mon_header .navbar-nav .nav-link {
+  color: #B2DCFD;
+}
+
+.mon_header .navbar-nav .nav-item {
+  background-color: #54489B;
+  border-radius: 5px;
+}
+
+.mon_header .header_logo_text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000000;
 }
 /*# sourceMappingURL=style.css.map */

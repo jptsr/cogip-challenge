@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
-<div class="container">
-    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-5" >Bienvenue à la COGIP</h1>
     <p>Bonjour !</p> 
 
     <table class= "table table-bordered caption-top" >

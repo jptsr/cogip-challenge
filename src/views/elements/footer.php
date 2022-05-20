@@ -1,4 +1,4 @@
-        <p>Je suis le footer</p>
+        
 
     <footer class="mon_footer">
         <div class="container-fluid">

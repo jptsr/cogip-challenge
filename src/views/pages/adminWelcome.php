@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
-<div class="container">
-    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-5" >Bienvenue à la COGIP</h1>
     <p>Bonjour Jean Christian !</p>
     <p>Que souhaitez-vous faire aujourd'hui ?</p>
 
@@ -9,7 +9,7 @@
     <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouvelle société</button>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dérnieres factures :</caption>
+        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Numéro facture</th>
@@ -31,7 +31,7 @@
 
 
     <table class= "table table-bordered caption-top mt-5" >
-        <caption class= "mb-3 fs-2" >Dérnieres contact :</caption>
+        <caption class= "mb-3 fs-2" >Dernières contact :</caption>
         <thead>
             <tr>
                 <th class="text-center">Nom</th>
@@ -53,7 +53,7 @@
     </table>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dérnieres société :</caption>
+        <caption class= "mb-3 fs-2" >Dèrnieres société :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Nom</th>
