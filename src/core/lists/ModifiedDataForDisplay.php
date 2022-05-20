@@ -34,6 +34,15 @@ class ModifiedDataForDisplay
         return $this->array;
     }
 
+    public function modifiedName() : array
+    {
+        for ($i=0; $i < count($this->array); $i++) {
+            $this->array[$i]['lastname'] .= ' ' . $this->array[$i]['firstname'];
+        }
+
+        return $this->array;
+    }
+
     public function modifiedVatNumber() : array
     {
         for ($i=0; $i < count($this->array); $i++) {

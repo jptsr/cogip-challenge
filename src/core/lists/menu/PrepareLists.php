@@ -37,6 +37,7 @@ class PrepareLists
 
         $modified_data = new ModifiedDataForDisplay($list);
         $new_list = $modified_data->modifiedPhoneNumber();
+        $new_list = $modified_data->modifiedName();
 
         return $new_list;
     }
