@@ -7,7 +7,7 @@ class ShowInvoices
     {
         echo <<<HTML
             <tr>
-                <td><a href="/liste-factures/details-facture">$invoice_nb</a></td>
+                <td><a href="/details-facture">$invoice_nb</a></td>
                 <td>$date</td>
                 <td>$company</td>
             </tr>

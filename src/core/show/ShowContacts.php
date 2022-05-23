@@ -7,7 +7,7 @@ class ShowContacts
     {
         echo <<<HTML
             <tr>
-                <td><a href="/liste-contacts/details-contact">$name</a></td>
+                <td><a href="/details-contact">$name</a></td>
                 <td>$phone_nb</td>
                 <td>$email</td>
                 <td>$company</td>

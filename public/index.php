@@ -46,7 +46,7 @@ switch ($url)
         $contactsCtrl = new ContactsController();
         $contactsCtrl -> displayView();
         break;
-    case '/liste-contacts/details-contact':
+    case '/details-contact':
         $contactDetailsCtrl = new ContactDetailsController();
         $contactDetailsCtrl -> displayView();
         break;
@@ -54,7 +54,7 @@ switch ($url)
         $invoicesCtrl = new InvoicesController();
         $invoicesCtrl -> displayView();
         break;
-    case '/liste-factures/details-facture':
+    case '/details-facture':
         $invoiceDetailsCtrl = new InvoiceDetailsController();
         $invoiceDetailsCtrl -> displayView();
         break;
