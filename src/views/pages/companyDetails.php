@@ -1,14 +1,7 @@
-<?php ob_start(); ?>
-
 <?php
-echo '<pre>';
-var_dump($_SESSION['details_company']);
-echo '<pre>';
+use app\src\core\show\ShowCompanyDetails;
+ob_start();
 ?>
-
-<?= $_SESSION['details_company'][1][0]['lastname'] ?>
-
-<?= $_SESSION['details_company'][2][0]['lastname'] ?>
 
 <h1>Société : <span><?= $_SESSION['details_company'][0]['name'] ?></span> </h1>
 <p>N° TVA : <span><?= $_SESSION['details_company'][0]['VAT'] ?></span> </p>
@@ -25,7 +18,11 @@ echo '<pre>';
         </tr>
     </thead>
     <tbody>
-        
+        <?php
+            foreach ( $_SESSION['details_company'][1] as $value) {
+                ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email']);
+            }
+        ?>
     </tbody>
 </table>
 
@@ -39,10 +36,11 @@ echo '<pre>';
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-        </tr>
-        
+        <?php
+            foreach ( $_SESSION['details_company'][2] as $value) {
+                ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname']);
+            }
+        ?>
     </tbody>
 </table>
 
