@@ -1,12 +1,18 @@
 <?php ob_start(); ?>
 
 <?php
-echo $_GET['id'];
+echo '<pre>';
+var_dump($_SESSION['details_company']);
+echo '<pre>';
 ?>
 
-<h1>Société : <span><?= $_SESSION['list_last_companies'][0]['name'] ?></span> </h1>
-<p>N° TVA : <span></span> </p>
-<p>Type : Client</p>
+<?= $_SESSION['details_company'][1][0]['lastname'] ?>
+
+<?= $_SESSION['details_company'][2][0]['lastname'] ?>
+
+<h1>Société : <span><?= $_SESSION['details_company'][0]['name'] ?></span> </h1>
+<p>N° TVA : <span><?= $_SESSION['details_company'][0]['VAT'] ?></span> </p>
+<p>Type : <?= $_SESSION['details_company'][0]['id_type'] ?></p>
 
 <table class= "table table-bordered caption-top">
 

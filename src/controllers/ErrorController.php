@@ -21,7 +21,7 @@ class ErrorController extends Controller
         $url = explode('=', $url);
         $id = $url[1];
         $location = 'location: /details-'.$page;
-        $_SESSION['get_id_company'] = $id;
+        $_SESSION['get_id_details'] = $id;
         header($location);
     }
 }

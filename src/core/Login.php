@@ -8,7 +8,7 @@ class Login
     public function matchInDb($username)
     {
         $request = new GetData();
-        $does_exist = $request->getData('employee', $username);
+        $does_exist = $request->getData('employee', 'username', $username);
 
         if ( !empty($does_exist) ) {
             return $does_exist;

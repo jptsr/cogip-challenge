@@ -7,6 +7,9 @@ class InvoiceDetailsController extends Controller
 {
     public function displayView()
     {
+        session_start();
+        var_dump($_SESSION['get_id_details']);
+
         return $this -> views('invoiceDetails');
     }
 }
