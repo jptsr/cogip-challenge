@@ -23,4 +23,15 @@ class GetInvoiceDetails
         
         return $final_data;
     }
+
+    public function detailsForContact($id)
+    {
+        $invoices = new GetAllData();
+        $data = $invoices->getDataWithId('invoices', 'id_contact', $id);
+
+        $modified_data = new ModifiedDataForDisplay($data);
+        $final_data = $modified_data->modifiedDate();
+
+        return $final_data;
+    }
 }

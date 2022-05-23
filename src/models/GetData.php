@@ -2,7 +2,6 @@
 namespace app\src\models;
 
 use app\src\core\lists\menu\CountSelectedColumn;
-use PDO;
 
 class GetData
 {
