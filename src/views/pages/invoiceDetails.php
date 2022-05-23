@@ -18,7 +18,7 @@ use app\src\core\show\ShowInvoiceDetails;
     <tbody>
         <?php
             foreach ($_SESSION['details_invoice'][1] as $value) {
-                ShowInvoiceDetails::displayCompany($value['name'], $value['VAT'], $value['type']);
+                ShowInvoiceDetails::displayCompany($value['name'], $value['VAT'], $value['id_type']);
             }
         ?>
     </tbody>

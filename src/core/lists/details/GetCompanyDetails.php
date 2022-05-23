@@ -35,17 +35,15 @@ class GetCompanyDetails
     public function detailsForInvoice($id)
     {
         $invoice = new GetAllData();
-        $tables = ['companies', 'company_type'];
-        $data = $invoice->getInnerJoinListAll(
-            $tables, 
-            'INNER JOIN', 'companies.id_company', 'company_type.id_type',
+        $data = $invoice->getListAll(
+            'companies',
             'companies.id_company', $id,
-            'companies.name', 'companies.VAT', 'company_type.type'
-        );
+            'name', 'VAT', 'id_type'
+        );        
 
         $modified_data = new ModifiedDataForDisplay($data);
+        $modified_data->modifiedCompanyType();
         $final_data = $modified_data->modifiedVatNumber();
-
         return $final_data;
     }
 }

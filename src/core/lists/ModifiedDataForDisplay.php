@@ -52,4 +52,13 @@ class ModifiedDataForDisplay
 
         return $this->array;
     }
+
+    public function modifiedCompanyType() : array
+    {
+        for ($i=0; $i < count($this->array); $i++) {
+            $this->array[$i]['id_type'] = ( $this->array[$i]['id_type'] == 1 ) ? 'fournisseur' : 'client';
+        }
+
+        return $this->array;
+    }
 }
