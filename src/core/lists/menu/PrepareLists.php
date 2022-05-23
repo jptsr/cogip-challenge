@@ -14,8 +14,8 @@ class PrepareLists
         $list = $companies->getInnerJoinList(
             $tables, 'INNER JOIN',
             'companies.id_type', 'company_type.id_type',
-            'companies.id_company ', 'DESC', 5,
-            'companies.name',' companies.country', 'companies.VAT', 'company_type.type'
+            'companies.id_company', 'DESC', 5,
+            'companies.id_company', 'companies.name',' companies.country', 'companies.VAT', 'company_type.type'
         );
 
         $modified_data = new ModifiedDataForDisplay($list);
@@ -32,7 +32,7 @@ class PrepareLists
             $tables, 'INNER JOIN', 
             'contacts.id_company', 'companies.id_company', 
             'contacts.id_contact', 'DESC', 5, 
-            'contacts.lastname', 'contacts.firstname', 'contacts.phone_number', 'contacts.email', 'companies.name'
+            'contacts.id_contact', 'contacts.lastname', 'contacts.firstname', 'contacts.phone_number', 'contacts.email', 'companies.name'
         );
 
         $modified_data = new ModifiedDataForDisplay($list);
@@ -50,7 +50,7 @@ class PrepareLists
             $tables, 'INNER JOIN',
             'invoices.id_company', 'companies.id_company',
             'invoices.date', 'ASC', 5,
-            'invoices.facture_number', 'invoices.date', 'companies.name'
+            'invoices.id_invoice', 'invoices.facture_number', 'invoices.date', 'companies.name'
         );
 
         $modified_data = new ModifiedDataForDisplay($list);
