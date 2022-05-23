@@ -1,6 +1,11 @@
 <?php ob_start(); ?>
 
-<h1>Société : <span></span> </h1>
+<?php
+// var_dump($_GET['id']);
+echo$_GET['id'];
+?>
+
+<h1>Société : <span><?= $_SESSION['list_last_companies'][0]['name'] ?></span> </h1>
 <p>N° TVA : <span></span> </p>
 <p>Type : Client</p>
 
@@ -15,11 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        
     </tbody>
 </table>
 

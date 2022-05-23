@@ -38,7 +38,7 @@ switch ($url)
         $companiesCtrl = new CompaniesController();
         $companiesCtrl -> displayView();
         break;
-    case '/liste-entreprises/details-entreprise':
+    case '/details-entreprise':
         $companyDetailsCtrl = new CompanyDetailsController();
         $companyDetailsCtrl -> displayView();
         break;
