@@ -21,7 +21,7 @@ use app\src\core\show\ShowInvoices;
         <tbody>
             <?php 
                 foreach ( $_SESSION['list_last_invoices'] as $value ) {
-                    ShowInvoices::listInvoices($value['facture_number'], $value['date'], $value['name']);
+                    ShowInvoices::listInvoices($value['facture_number'], $value['date'], $value['name'], $value['id_invoice']);
                 }
             ?>
         </tbody>
@@ -40,7 +40,7 @@ use app\src\core\show\ShowInvoices;
         <tbody>
             <?php
                 foreach ( $_SESSION['list_last_contacts'] as $value ) {
-                    ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name']);
+                    ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
                 }
             ?>
         </tbody>

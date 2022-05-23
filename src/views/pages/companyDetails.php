@@ -1,8 +1,7 @@
 <?php ob_start(); ?>
 
 <?php
-// var_dump($_GET['id']);
-echo$_GET['id'];
+echo $_GET['id'];
 ?>
 
 <h1>Société : <span><?= $_SESSION['list_last_companies'][0]['name'] ?></span> </h1>
