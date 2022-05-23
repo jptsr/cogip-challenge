@@ -2,13 +2,13 @@
 namespace app\src\core\lists\details;
 
 use app\src\core\lists\ModifiedDataForDisplay;
-use app\src\models\GetData;
+use app\src\models\GetAllData;
 
 class GetContactDetails
 {
     public function detailsForCompany($id)
     {
-        $affiliate_details = new GetData();
+        $affiliate_details = new GetAllData();
         $data = $affiliate_details->getListAll(
             'contacts',
             'id_company', $id,

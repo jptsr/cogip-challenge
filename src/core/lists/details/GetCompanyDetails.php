@@ -2,7 +2,7 @@
 namespace app\src\core\lists\details;
 
 use app\src\core\lists\ModifiedDataForDisplay;
-use app\src\models\GetData;
+use app\src\models\GetAllData;
 
 class GetCompanyDetails
 {
@@ -21,7 +21,7 @@ class GetCompanyDetails
 
     private function getDetails($id)
     {
-        $company_details = new GetData();
+        $company_details = new GetAllData();
         $data = $company_details->getDataWithId('companies', 'id_company', $id);
 
         $modified_data = new ModifiedDataForDisplay($data);

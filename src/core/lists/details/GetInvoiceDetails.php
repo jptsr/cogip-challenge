@@ -2,13 +2,13 @@
 namespace app\src\core\lists\details;
 
 use app\src\core\lists\ModifiedDataForDisplay;
-use app\src\models\GetData;
+use app\src\models\GetAllData;
 
 class GetInvoiceDetails
 {
     public function detailsForCompany($id)
     {
-        $invoice_details = new GetData();
+        $invoice_details = new GetAllData();
         $tables = ['invoices', 'contacts'];
         $data = $invoice_details->getInnerJoinListAll(
             $tables,
