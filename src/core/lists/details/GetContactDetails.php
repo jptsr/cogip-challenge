@@ -49,4 +49,18 @@ class GetContactDetails
 
         return $final_data;
     }
+
+    public function detailsForInvoice($id)
+    {
+        $contact = new GetAllData();
+        $data = $contact->getDataWithId(
+            'contacts', 'id_contact', $id
+        );
+
+        $modified_data = new ModifiedDataForDisplay($data);
+        $modified_data->modifiedPhoneNumber();
+        $final_data = $modified_data->modifiedName();
+
+        return $final_data;
+    }
 }

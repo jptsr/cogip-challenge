@@ -6,6 +6,27 @@ use app\src\models\GetAllData;
 
 class GetInvoiceDetails
 {
+    public function details($id)
+    {
+        $data = $this->getDetails($id);
+
+        $company = new GetCompanyDetails();
+        $data[1] = $company->detailsForInvoice($data[0]['id_company']);
+
+        $contact = new GetContactDetails();
+        $data[2] = $contact->detailsForInvoice($data[0]['id_contact']);
+
+        return $data;
+    }
+
+    public function getDetails($id)
+    {
+       $invoice = new GetAllData();
+       $array = $invoice->getDataWithId('invoices', 'id_invoice', $id);
+       
+       return $array;
+    }
+
     public function detailsForCompany($id)
     {
         $invoice_details = new GetAllData();
