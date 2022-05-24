@@ -2,7 +2,6 @@
 namespace app\src\models;
 
 use app\src\core\lists\menu\CountSelectedColumn;
-use PDO;
 
 class GetAllData
 {
@@ -52,6 +51,21 @@ class GetAllData
             $join_type $tables[1]
             ON $col1 = $col2
             WHERE $id_column = $id"
+        );
+
+        return QueryPartTwo::all($stmt);
+    }
+
+    public function getJoinNoCondition(array $tables, string $join_type, string $col1, string $col2, ... $selected_col)
+    {
+        $query = new CountSelectedColumn($selected_col);
+        $blabla = $query->createQuery();
+
+        $stmt = $this->database->prepare(
+            "SELECT $blabla
+            FROM $tables[0]
+            $join_type $tables[1]
+            ON $col1 = $col2"
         );
 
         return QueryPartTwo::all($stmt);

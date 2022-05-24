@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+use app\src\core\show\ShowContacts;
+ob_start();
+?>
 
 <!-- <h1>List Contacts</h1> -->
 
@@ -20,13 +23,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- loop  -->
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+            <?php
+              foreach ( $_SESSION['all_contacts'] as $value ) {
+                ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
+              }
+            ?>
         </tbody>
       </table>
     </div>
