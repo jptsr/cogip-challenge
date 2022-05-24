@@ -3,19 +3,6 @@ use app\src\core\show\ShowCompanies;
 ob_start();
 ?>
 
-<?php
-// echo '<pre>';
-// var_dump($_SESSION['all_companies'][0]);
-// echo '<pre>';
-?>
-
-<?php
-// echo '<pre>';
-// var_dump($_SESSION['all_companies'][1]);
-// echo '<pre>';
-?>
-
-
 <!-- <h1>List Companies</h1> -->
 <div class="container ">
   <div class="row  mb-5 mt-5">
