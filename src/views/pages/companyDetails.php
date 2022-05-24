@@ -1,8 +1,11 @@
-<?php ob_start(); ?>
+<?php
+use app\src\core\show\ShowCompanyDetails;
+ob_start();
+?>
 
-<h1>Société : <span></span> </h1>
-<p>N° TVA : <span></span> </p>
-<p>Type : Client</p>
+<h1>Société : <span><?= $_SESSION['details_company'][0]['name'] ?></span> </h1>
+<p>N° TVA : <span><?= $_SESSION['details_company'][0]['VAT'] ?></span> </p>
+<p>Type : <?= $_SESSION['details_company'][0]['id_type'] ?></p>
 
 <table class= "table table-bordered caption-top">
 
@@ -15,11 +18,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <?php
+            foreach ( $_SESSION['details_company'][1] as $value) {
+                ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email']);
+            }
+        ?>
     </tbody>
 </table>
 
@@ -33,10 +36,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-        </tr>
-        
+        <?php
+            foreach ( $_SESSION['details_company'][2] as $value) {
+                ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname']);
+            }
+        ?>
     </tbody>
 </table>
 

@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php
+
+use app\src\core\show\ShowInvoices;
+
+ ob_start(); ?>
 
 <!-- <h1>List Invoices</h1> -->
 
@@ -20,13 +24,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- loop  -->
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <?php
+            foreach ( $_SESSION['all_invoices'] as $value ) {
+              ShowInvoices::invoices($value['facture_number'], $value['date'], $value['name'], $value['type'], $value['id_invoice']);
+            }
+          ?>
         </tbody>
       </table>
     </div>

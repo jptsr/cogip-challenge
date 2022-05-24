@@ -1,119 +1,70 @@
-<?php ob_start(); ?>
+<?php
 
-<h1>Bienvenue à la COGIP</h1>
-<p>Bonjour !</p> 
+use app\src\core\show\ShowCompanies;
+use app\src\core\show\ShowContacts;
+use app\src\core\show\ShowInvoices;
 
-<!---->
-<table>
-    <caption>Dernières factures :</caption>
-    <thead>
-        <tr>
-            <th>Numéro facture</th>
-            <th>Dates</th>
-            <th>Société</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+ ob_start(); ?>
+<div class="container">
+    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+    <p>Bonjour <?= $_SESSION['username'] ?> !</p>
+    <?= $_SESSION['non_admin'] = ( empty($_SESSION['non_admin']) ) ? '' : $_SESSION['non_admin'] ?>
 
+    <table class= "table table-bordered caption-top" >
+        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
+        <thead>
+            <tr>
+                <th  class="text-center fw-bold " >Numéro facture</th>
+                <th class="text-center fw-bold" >Dates</th>
+                <th class="text-center fw-bold" >Société</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+                foreach ( $_SESSION['list_last_invoices'] as $value ) {
+                    ShowInvoices::listInvoices($value['facture_number'], $value['date'], $value['name'], $value['id_invoice']);
+                }
+            ?>
+        </tbody>
+    </table>
 
-<table>
-    <caption>Dernières contact :</caption>
-    <thead>
-        <tr>
-            <th>Nom </th>
-            <th>Téléphone</th>
-            <th>e-mail</th>
-            <th>Société</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+    <table class= "table table-bordered caption-top" >
+        <caption  class= "mb-3 fs-2"   >Dernières contact :</caption>
+        <thead>
+            <tr>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >Téléphone</th>
+                <th class="text-center fw-bold" >e-mail</th>
+                <th class="text-center fw-bold" >Société</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach ( $_SESSION['list_last_contacts'] as $value ) {
+                    ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
+                }
+            ?>
+        </tbody>
+    </table>
 
-<table>
-    <caption>Dernières sociétés :</caption>
-    <thead>
-        <tr>
-            <th>Nom </th>
-            <th>TVA</th>
-            <th>Pays</th>
-            <th>Type</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-
-
-
+    <table class= "table table-bordered caption-top" >
+        <caption class= "mb-3 fs-2"  >Dernières sociétés :</caption>
+        <thead>
+            <tr>
+                <th class="text-center fw-bold" >Nom </th>
+                <th class="text-center fw-bold" >TVA</th>
+                <th class="text-center fw-bold" >Pays</th>
+                <th class="text-center fw-bold" >Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+                foreach ( $_SESSION['list_last_companies'] as $value ) {
+                    ShowCompanies::listCompanies($value['name'], $value['VAT'], $value['country'], $value['type'], $value['id_company']);
+                }
+            ?>
+        </tbody>
+    </table>
 
 <?php
 $content = ob_get_clean();

@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php
+
+use app\src\core\show\ShowInvoiceDetails;
+
+ ob_start(); ?>
 
 <h1>Facture : <span></span> </h1>
 
@@ -12,7 +16,11 @@
         </tr>
     </thead>
     <tbody>
-
+        <?php
+            foreach ($_SESSION['details_invoice'][1] as $value) {
+                ShowInvoiceDetails::displayCompany($value['name'], $value['VAT'], $value['id_type']);
+            }
+        ?>
     </tbody>
 </table>
 
@@ -27,7 +35,11 @@
         </tr>
     </thead>
     <tbody>
-        
+        <?php
+            foreach ($_SESSION['details_invoice'][2] as $value) {
+                ShowInvoiceDetails::displayContact($value['lastname'], $value['email'], $value['phone_number']);
+            }
+        ?>
     </tbody>
 </table>
 

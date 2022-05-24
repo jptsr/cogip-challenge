@@ -29,9 +29,13 @@ class LoginController extends Controller
             session_unset();
             $_SESSION['username'] = $user_data[0]['username'];
             $_SESSION['password'] = $user_data[0]['password'];
-            $_SESSION['user_status'] = ( $user_data[0]['username'] == 1 ) ? 'admin' : 'moderateur';
+            $_SESSION['user_status'] = ( $user_data[0]['status'] == 1 ) ? 'admin' : 'moderateur';
 
-            header('location: /menu');
+            if ( $_SESSION['user_status'] == 'admin' ) {
+                header('location: /menu-admin');
+            } else {
+                header('location: /menu');
+            }
         } else {
             if ( empty($_SESSION['empty_password']) ) {
                 ErrorMsgValidation::createErrorMsg('wrong', 'password');
