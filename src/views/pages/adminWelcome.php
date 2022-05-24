@@ -7,7 +7,7 @@ use app\src\core\show\ShowInvoices;
  ob_start(); ?>
 <div class="container">
     <h1 class="text-center" >Bienvenue à la COGIP</h1>
-    <p>Bonjour Jean Christian !</p>
+    <p>Bonjour <?= $_SESSION['username'] ?> !</p>
     <p>Que souhaitez-vous faire aujourd'hui ?</p>
 
     <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle facture  </button>
