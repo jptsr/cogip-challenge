@@ -21,11 +21,11 @@ h1 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f6', endColorstr='#ebf1f6', GradientType=1);
 }
 
-.mon_header .navbar-nav .nav-link {
+.mon_header .navbar-nav .nav-link, .mon_header .navbar-nav .dropdown-item {
   color: #B2DCFD;
 }
 
-.mon_header .navbar-nav .nav-item {
+.mon_header .navbar-nav .nav-item, .mon_header .navbar-nav .dropdown-menu {
   background-color: #54489B;
   border-radius: 5px;
 }
