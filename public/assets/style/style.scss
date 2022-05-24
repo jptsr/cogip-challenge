@@ -26,10 +26,10 @@ h1 {
     background: linear-gradient(to right, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f6', endColorstr='#ebf1f6', GradientType=1);
   .navbar-nav {
-    .nav-link {
+    .nav-link, .dropdown-item {
       color: $color_text;
     }
-    .nav-item {
+    .nav-item, .dropdown-menu {
       background-color: $color_bg;
       border-radius: 5px;
     }
