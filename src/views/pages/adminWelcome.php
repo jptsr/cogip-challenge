@@ -30,7 +30,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
+                <td class="text-center">
+                    <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+                </td>
             </tr>
 
         </tbody>
@@ -54,7 +58,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
+                <td class="text-center ">
+                    <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -76,7 +84,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
+                <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+                </td>
             </tr>
 
         </tbody>
