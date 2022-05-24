@@ -1,10 +1,14 @@
 <?php
 
-use app\src\core\show\ShowCompanies;
-use app\src\core\show\ShowContacts;
-use app\src\core\show\ShowInvoices;
+use app\src\core\show\{
+    ShowCompanies,
+    ShowContacts,
+    ShowInvoices
+};
 
- ob_start(); ?>
+ob_start();
+?>
+
 <div class="container">
     <h1 class="text-center" >Bienvenue à la COGIP</h1>
     <p>Bonjour <?= $_SESSION['username'] ?> !</p>

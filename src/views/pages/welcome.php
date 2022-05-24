@@ -7,7 +7,8 @@ use app\src\core\show\ShowInvoices;
  ob_start(); ?>
 <div class="container">
     <h1 class="text-center" >Bienvenue à la COGIP</h1>
-    <p>Bonjour <?= $_SESSION['username'] ?> !</p> 
+    <p>Bonjour <?= $_SESSION['username'] ?> !</p>
+    <?= $_SESSION['non_admin'] = ( empty($_SESSION['non_admin']) ) ? '' : $_SESSION['non_admin'] ?>
 
     <table class= "table table-bordered caption-top" >
         <caption class= "mb-3 fs-2" >Dernières factures :</caption>

@@ -9,6 +9,11 @@ class HomeAdminController extends Controller
     {
         session_start();
 
+        if ( $_SESSION['user_status'] !== 'admin' ) {
+            $_SESSION['non_admin'] = 'Vous n\'avez pas les droits';
+            header('location: /menu');
+        }
+
         $callLists = new CallListsMenu();
         $callLists->call();
 
