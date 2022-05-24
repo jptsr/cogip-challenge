@@ -1,4 +1,10 @@
-<?php ob_start(); ?>
+<?php
+
+use app\src\core\show\ShowCompanies;
+use app\src\core\show\ShowContacts;
+use app\src\core\show\ShowInvoices;
+
+ ob_start(); ?>
 <div class="container">
     <h1 class="text-center" >Bienvenue à la COGIP</h1>
     <p>Bonjour Jean Christian !</p>
@@ -19,13 +25,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
-            </tr>
-
+            <?php 
+                foreach ( $_SESSION['list_last_invoices'] as $value ) {
+                    ShowInvoices::listInvoicesAdmin($value['facture_number'], $value['date'], $value['name'], $value['id_invoice']);
+                }
+            ?>
         </tbody>
     </table>
 
@@ -42,13 +46,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
-            </tr>
+            <?php
+                foreach ( $_SESSION['list_last_contacts'] as $value ) {
+                    ShowContacts::listContactsAdmin($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
+                }
+            ?>
         </tbody>
     </table>
 
@@ -64,14 +66,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
-            </tr>
-
+            <?php 
+                foreach ( $_SESSION['list_last_companies'] as $value ) {
+                    ShowCompanies::listCompaniesAdmin($value['name'], $value['VAT'], $value['country'], $value['type'], $value['id_company']);
+                }
+            ?>
         </tbody>
     </table>
 </div>

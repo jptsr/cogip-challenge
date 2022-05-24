@@ -61,9 +61,6 @@ use app\src\core\show\ShowInvoices;
                 foreach ( $_SESSION['list_last_companies'] as $value ) {
                     ShowCompanies::listCompanies($value['name'], $value['VAT'], $value['country'], $value['type'], $value['id_company']);
                 }
-                // echo '<pre>';
-                // var_dump($_SESSION['list_last_companies']);
-                // echo '<pre>';
             ?>
         </tbody>
     </table>
