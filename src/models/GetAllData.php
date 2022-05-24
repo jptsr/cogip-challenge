@@ -70,4 +70,21 @@ class GetAllData
 
         return QueryPartTwo::all($stmt);
     }
+
+    public function getDoubleJoin(array $tables, array $join_type, array $cols, ... $selected_col)
+    {
+        $query = new CountSelectedColumn($selected_col);
+        $blabla = $query->createQuery();
+
+        $stmt = $this->database->prepare(
+            "SELECT $blabla
+            FROM $tables[0]
+            $join_type[0] $tables[1]
+            ON $cols[0] = $cols[1]
+            $join_type[1] $tables[2]
+            ON $cols[2] = $cols[3]"
+        );
+
+        return QueryPartTwo::all($stmt);
+    }
 }
