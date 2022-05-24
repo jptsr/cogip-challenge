@@ -3,6 +3,7 @@
 namespace app\src\controllers\contacts;
 
 use app\src\controllers\Controller;
+use app\src\core\lists\companies\ListCompanies;
 use app\src\core\validations\ValidateNewContact;
 
 class NewContactController extends Controller
@@ -15,6 +16,10 @@ class NewContactController extends Controller
         unset($_SESSION['prenom']);
         unset($_SESSION['phone']);
         unset($_SESSION['email']);
+
+        $companies_list = new ListCompanies();
+        $_SESSION['all_companies'] = $companies_list->allCompanies();
+
         $this->ValidationComplete();
         return $this->views('newContact');
     }

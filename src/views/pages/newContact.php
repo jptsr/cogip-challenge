@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php
+
+use app\src\core\show\ShowCompaniesOption;
+
+ ob_start(); ?>
 
 <!-- <h1>New Contact add</h1> -->
 
@@ -54,10 +58,16 @@
         <div class="mb-3">
           <label for="société" class="form-label">Société</label>
           <select class="form-select fw-light" name="compagnie">
-            <!-- loop -->
-            <option value="Société1" name="companie">Société1</option>
-            <option value="Société2" name="companie">Société2</option>
+          <?php
+            foreach($_SESSION['all_companies'][0] as $companie){
+              ShowCompaniesOption::listOptionsCompanies($companie['name']);
+            }
+            foreach($_SESSION['all_companies'][1] as $companie){
+              ShowCompaniesOption::listOptionsCompanies($companie['name']);
+            }
+            ?>
           </select>
+          
         </div>
         <div class="d-grid  justify-content-end">
           <button type="submit" name="newContact" class="btn btn-primary">Submit</button>
