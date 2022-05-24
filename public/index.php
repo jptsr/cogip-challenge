@@ -1,22 +1,30 @@
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-use app\src\controllers\companies\CompaniesController;
-use app\src\controllers\companies\CompanyDetailsController;
-use app\src\controllers\companies\NewCompanyController;
-use app\src\controllers\companies\UpdateCompanyController;
-use app\src\controllers\contacts\ContactDetailsController;
-use app\src\controllers\contacts\ContactsController;
-use app\src\controllers\contacts\NewContactController;
-use app\src\controllers\contacts\UpdateContactController;
-use app\src\controllers\ErrorController;
-use app\src\controllers\HomeAdminController;
-use app\src\controllers\HomeController;
-use app\src\controllers\invoices\InvoiceDetailsController;
-use app\src\controllers\invoices\InvoicesController;
-use app\src\controllers\invoices\NewInvoiceController;
-use app\src\controllers\invoices\UpdateInvoiceController;
-use app\src\controllers\LoginController;
+use app\src\controllers\companies\{
+    CompaniesController,
+    CompanyDetailsController, 
+    NewCompanyController, 
+    UpdateCompanyController
+};
+use app\src\controllers\contacts\{
+    ContactDetailsController, 
+    ContactsController, 
+    NewContactController, 
+    UpdateContactController
+};
+use app\src\controllers\{
+    LoginController, 
+    HomeController, 
+    HomeAdminController, 
+    ErrorController
+};
+use app\src\controllers\invoices\{
+    InvoiceDetailsController, 
+    InvoicesController, 
+    NewInvoiceController, 
+    UpdateInvoiceController
+};
 
 $url = $_SERVER['REQUEST_URI'];
 
