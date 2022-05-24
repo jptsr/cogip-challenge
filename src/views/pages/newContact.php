@@ -6,47 +6,65 @@
   <div class="row align-items-center">
     <h2 class="mb-5 mt-5 text-center">Ajout nouveau contact</h2>
   </div>
-  
+
   <div class="row justify-content-center py-5">
     <div class="col-6">
       <form action="/nouveau-contact" method="post">
-
+        <?php
+        echo '<pre>';
+        print_r($_SESSION);
+        echo '</pre>';
+        ?>
         <div class="mb-3">
-			    <label for="nom" class="form-label">Nom</label>
-			    <input type="text" class="form-control" name="nom" value="">
-          <!-- c'est ici que je dois faire une boucle pour les erreurs mais attention, il faut le faire pour chaque champ -->
-          <?= $errorCar= (in_array('nom', $_SESSION)) ? '' : 'Il y a un soucis avec le nom :('; ?>
-          <?= var_dump($_SESSION) // il y a rien dans la session ?>
-		    </div>
+          <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" name="nom" value="">
+          <?php if (!empty($_SESSION['nom'])) {
+            echo $_SESSION['nom'];
+          } else {
+            echo '';
+          } ?>
+        </div>
         <div class="mb-3">
-			    <label for="prenom" class="form-label">Prénom</label>
-			    <input type="text" class="form-control" name="prenom" value="">
-          <?= $errorCar= (in_array('prenom', $_SESSION)) ? '' : 'Il y a un soucis avec le prénom :('; ?>
-
-		    </div>
+          <label for="prenom" class="form-label">Prénom</label>
+          <input type="text" class="form-control" name="prenom" value="">
+          <?php if (!empty($_SESSION['prenom'])) {
+            echo $_SESSION['prenom'];
+          } else {
+            echo '';
+          } ?>
+        </div>
         <div class="mb-3">
-			    <label for="phone" class="form-label">Phone</label>
-			    <input type="tel" class="form-control" name="phone">
-          <?= $errorCar= (in_array('prenom', $_SESSION)) ? '' : 'Il y a un soucis avec le prénom :('; ?>
-		    </div>
+          <label for="phone" class="form-label">Phone</label>
+          <input type="tel" class="form-control" name="phone">
+          <?php if (!empty($_SESSION['phone'])) {
+            echo $_SESSION['phone'];
+          } else {
+            echo '';
+          } ?>
+        </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control"  placeholder="name@example.com" name="email">
+          <input type="email" class="form-control" placeholder="name@example.com" name="email">
+          <?php if (!empty($_SESSION['email'])) {
+            echo $_SESSION['email'];
+          } else {
+            echo '';
+          } ?>
         </div>
-		    <div class="mb-3">
-			    <label for="société" class="form-label">Société</label>
-			    <select class="form-select fw-light" name="compagnie">
+        <div class="mb-3">
+          <label for="société" class="form-label">Société</label>
+          <select class="form-select fw-light" name="compagnie">
             <!-- loop -->
-				    <option value="Société1" name="Société1" >Société1</option>
-				    
-			    </select>
-		    </div>
+            <option value="Société1" name="companie">Société1</option>
+            <option value="Société2" name="companie">Société2</option>
+          </select>
+        </div>
         <div class="d-grid  justify-content-end">
-          <button type="submit" name ="newContact" class="btn btn-primary">Submit</button>
-        </div>     
+          <button type="submit" name="newContact" class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
-    
+
   </div>
 </div>
 
@@ -92,6 +110,6 @@
   </div>
 </div> -->
 
-<?php 
+<?php
 $content = ob_get_clean();
-require __DIR__. '/../layout.php';
+require __DIR__ . '/../layout.php';

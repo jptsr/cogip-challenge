@@ -3,7 +3,7 @@
 namespace app\src\controllers\contacts;
 
 use app\src\controllers\Controller;
-use app\src\core\ErrorMsgValidation;
+use app\src\core\validations\ValidateNewContact;
 
 class NewContactController extends Controller
 {
@@ -11,75 +11,47 @@ class NewContactController extends Controller
     {
 
         session_start();
-        session_unset();
-
-        if (isset($_POST['newContact'])) {
-            // ma validation
-            $data = $_POST;
-            // elles sont bien là
-            foreach ($data as $champ) {
-                // si c'est un email, je l'envoie dans la fonction liée à l'email
-                if ($champ == $_POST['email']) {
-                    $this->validationMail($champ);
-                } elseif($champ == $_POST['phone']) {
-                    $this->validationPhone($champ);
-                }
-                else{
-                    $this->validationSpecial($champ);
-                }
-            }
-        }
+        unset($_SESSION['nom']);
+        unset($_SESSION['prenom']);
+        unset($_SESSION['phone']);
+        unset($_SESSION['email']);
+        $this->ValidationComplete();
         return $this->views('newContact');
     }
-    public function validationPhone($number)
+
+    private function ValidationComplete()
     {
-        $pattern = '/\d/';
-        if(preg_match_all($pattern, $number, $matches)) {
-            $sum = count($matches[0]);
-            if($sum !== 10){
-                
+        if (isset($_POST['newContact'])) {
+            $data = $_POST;
+            $arrKeys = array_keys($data);
+            $arrValues = [];
+            $arrSession = [];
+            // J'assigne les values de $data dans un tableau
+            foreach ($data as $datas) {
+                array_push($arrValues, $datas);
             }
-          }
-    }
-    public function validationSpecial($string)
-    {
-        $arrErreur = [];
-        $pattern = '/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/';
-
-        trim($string);
-
-        if (preg_match($pattern, $string) === false || preg_match($pattern, $string) == 1) {
-
-            //faire un tableau avec les erreurs, mettre ces erreurs avec messages dans une variable session, mettre cette variable session dans une autre variable session, faire une boucle dans ma variable session erreur pour check les erreurs et les affichers dans l'html
-            $NomErreur = $this->retrouverLeNomDansLePost($string);
-            
-            array_push($arrErreur, $NomErreur);
-            return ErrorMsgValidation::createErrorMsg('mauvais', $NomErreur);
-        }
-    }
-    public function validationMail($email)
-    {
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            // l'adresse est bonne mais je sais pas quoi faire ici du coup
-            
-        } else {
-            $_SESSION['email'] = "l'adresse mail n'est pas valide.";
-            // C'est ok, on a bien la variable dans session key -> value
-        }
-    }
-    public function retrouverLeNomDansLePost($string)
-    {
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $tel = $_POST['phone'];
-        $mail = $_POST['email'];
-        $arr = [$nom, $prenom, $tel, $mail];
-        for ($i = 0; $i < 4; $i++) {
-            if ($arr[$i] == $string) {
-                $key = array_search($arr[$i], $_POST);
-                return $key;
+            // J'assigne la valeur NULL dans chaque champ avec '' 
+            for ($k = 0; $k < 5; $k++) {
+                if ($arrValues[$k] == '') {
+                    $arrValues[$k] = '';
+                }
+            }
+            // Je boucle sur le tableau des Keys pour une correspondance avec les champ du formulaire
+            for ($m = 0; $m < 4; $m++) {
+                if ($arrKeys[$m] == 'phone') {
+                    $phoneValidation = new ValidateNewContact();
+                    $phoneValidation->validationPhone($m, $arrValues, $arrKeys);
+                } elseif ($arrKeys[$m] == 'email') {
+                    $mailValidation = new ValidateNewContact();
+                    $mailValidation->validationMail($m, $arrValues, $arrKeys);
+                } else {
+                    $otherValidation = new ValidateNewContact();
+                    $otherValidation->validationSpecial($m, $arrValues, $arrKeys);
+                }
+            }
+            // J'assigne les keys et les values dans un nouveau tableau
+            for ($i = 0; $i < 5; $i++) {
+                $arrSession[$arrKeys[$i]] = $arrValues[$i];
             }
         }
     }
