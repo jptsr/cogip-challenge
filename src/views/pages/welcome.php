@@ -15,7 +15,7 @@ ob_start();
         <thead>
             <tr>
                 <th  class="text-center fw-bold " >Numéro facture</th>
-                <th class="text-center fw-bold" >Dates</th>
+                <th class="text-center fw-bold" >Date</th>
                 <th class="text-center fw-bold" >Société</th>
             </tr>
         </thead>
@@ -29,12 +29,12 @@ ob_start();
     </table>
 
     <table class= "table table-bordered caption-top" >
-        <caption  class= "mb-3"   >Dernières contact :</caption>
+        <caption  class= "mb-3"   >Derniers contacts :</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom </th>
                 <th class="text-center fw-bold" >Téléphone</th>
-                <th class="text-center fw-bold" >e-mail</th>
+                <th class="text-center fw-bold" >E-mail</th>
                 <th class="text-center fw-bold" >Société</th>
             </tr>
         </thead>

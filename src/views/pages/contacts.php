@@ -5,7 +5,7 @@ ob_start();
 
 <div class="container ">
   <div class="row  mb-5 mt-5">
-    <h1 class="text-center">COGIP : Annuaire des contacts</h1>
+    <h1 class="text-center">COGIP : Listing des contacts</h1>
   </div>
   
   <div class="row justify-content-center ">
@@ -15,7 +15,7 @@ ob_start();
           <tr>
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold"> Téléphone</th>
-            <th class="text-center fw-bold"> e-mail</th>
+            <th class="text-center fw-bold"> E-mail</th>
             <th class="text-center fw-bold"> Société</th>
             <th></th>
           </tr>

@@ -14,7 +14,7 @@ ob_start();
         <thead>
           <tr>
             <th class="text-center fw-bold">Numero facture</th>
-            <th class="text-center fw-bold">Dates</th>
+            <th class="text-center fw-bold">Date</th>
             <th class="text-center fw-bold">Société</th>
             <th class="text-center fw-bold">Type</th>
             <th></th>

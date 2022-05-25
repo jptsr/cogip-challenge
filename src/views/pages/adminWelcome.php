@@ -27,8 +27,8 @@ ob_start();
         <caption class= "mb-3 " >Dernières factures :</caption>
         <thead>
             <tr>
-                <th class="text-center" >Numéro facture</th>
-                <th class="text-center" >Dates</th>
+                <th class="text-center" >Numéro de facture</th>
+                <th class="text-center" >Date</th>
                 <th class="text-center" >Société</th>
                 <th class="text-center" ></th>
             </tr>
@@ -44,12 +44,12 @@ ob_start();
 
 
     <table class= "table table-bordered caption-top mt-5" >
-        <caption class= "mb-3" >Dernières contact :</caption>
+        <caption class= "mb-3" >Derniers contacts :</caption>
         <thead>
             <tr>
                 <th class="text-center">Nom</th>
                 <th class="text-center">Téléphone</th>
-                <th class="text-center">e-mail</th>
+                <th class="text-center">E-mail</th>
                 <th class="text-center">Société</th>
                 <th class="text-center"></th>
             </tr>
@@ -64,7 +64,7 @@ ob_start();
     </table>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 " >Dèrnieres société :</caption>
+        <caption class= "mb-3 " >Dernières sociétés :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Nom</th>
