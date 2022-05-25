@@ -43,9 +43,20 @@ class GetContactDetails
             'lastname', 'firstname', 'phone_number', 'email'
         );
 
-        $modified_data = new ModifiedDataForDisplay($data);
-        $modified_data->modifiedPhoneNumber();
-        $final_data = $modified_data->modifiedName();
+        if ( !empty($data) ) {
+            $modified_data = new ModifiedDataForDisplay($data);
+            $modified_data->modifiedPhoneNumber();
+            $final_data = $modified_data->modifiedName();
+        } else {
+            $final_data = [
+                ["id_contact" => "/",
+                "lastname" => "/",
+                "firstname" => "/",
+                "phone_number" => "/",
+                "email" => "/",
+                "id_company" => "/",]
+            ];
+        }
 
         return $final_data;
     }
@@ -57,9 +68,20 @@ class GetContactDetails
             'contacts', 'id_contact', $id
         );
 
-        $modified_data = new ModifiedDataForDisplay($data);
-        $modified_data->modifiedPhoneNumber();
-        $final_data = $modified_data->modifiedName();
+        if ( !empty($data) ) {
+            $modified_data = new ModifiedDataForDisplay($data);
+            $modified_data->modifiedPhoneNumber();
+            $final_data = $modified_data->modifiedName();
+        } else {
+            $final_data = [
+                ["id_contact" => "/",
+                "lastname" => "/",
+                "firstname" => "/",
+                "phone_number" => "/",
+                "email" => "/",
+                "id_company" => "/",]
+            ];
+        }
 
         return $final_data;
     }
