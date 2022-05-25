@@ -17,6 +17,7 @@
             <th class="text-center fw-bold"> Téléphone</th>
             <th class="text-center fw-bold"> e-mail</th>
             <th class="text-center fw-bold"> Société</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,11 @@
             <td></td>
             <td></td>
             <td></td>
+            <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+            </td>
           </tr>
         </tbody>
       </table>
