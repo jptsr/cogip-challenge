@@ -3,7 +3,7 @@ namespace app\src\core\update;
 
 use app\src\models\GetAllData;
 
-class PrepareUpdateContact
+class PrepareUpdateContact extends SetDataContact
 {
     public function contactData($id)
     {
@@ -17,5 +17,17 @@ class PrepareUpdateContact
         );
 
         return $data;
+    }
+
+    public function prepareUpdateInDb() : array
+    {
+        $this->setLastname($_POST['nom']);
+        $this->setFirstname($_POST['prenom']);
+        $this->setPhoneNb($_POST['phone']);
+        $this->setEmail($_POST['email']);
+        $this->setCompany($_POST['compagnie']);
+        $final_data = $this->getData();
+
+        return $final_data;
     }
 }

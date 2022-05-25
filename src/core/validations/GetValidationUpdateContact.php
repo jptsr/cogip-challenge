@@ -1,7 +1,8 @@
 <?php
 namespace app\src\core\validations;
 
-use app\src\models\CreateData;
+use app\src\core\update\PrepareUpdateContact;
+use app\src\models\UpdateData;
 
 class GetValidationUpdateContact
 {
@@ -52,10 +53,14 @@ class GetValidationUpdateContact
             // Si il n'y a pas d'erreur alors on push dans la db et on redirige vers la liste des contacts sinon, on recharge la page
             if ($compteur == 5) {
                 echo 'tout est bon';
-                // $CreateNewContactDb = new CreateData();
-                // $CreateNewContactDb->CreateNewContact('contacts', $_POST['nom'], $_POST['prenom'], $_POST['phone'], $_POST['email'], $_POST['compagnie']);
-                // header('location: /liste-contacts');
+                $update = new PrepareUpdateContact();
+                $final_data = $update->prepareUpdateInDb();
+                
+                $update_contact = new UpdateData();
+                $update_contact->updateContact('contacts', $final_data['lastname'], $final_data['firstname'], $final_data['phone'], $final_data['email'], $final_data['company'], $_SESSION['get_id_updates']);
+                
                 $compteur = 0;
+                header('location: /liste-contacts');
             } elseif ($compteur == 0) {
                 // je n'ai rien à mettre ici
             } else {

@@ -3,24 +3,6 @@ use app\src\core\show\ShowCompaniesOption;
 ob_start();
 ?>
 
-<?php
-echo '<pre>';
-var_dump($_SESSION['get_id_updates']);
-echo '<pre>';
-?>
-
-<?php
-echo '<pre>';
-var_dump($_SESSION['actual_contact'][0]);
-echo '<pre>';
-?>
-
-<?php
-echo '<pre>';
-var_dump($_POST);
-echo '<pre>';
-?>
-
 <!-- <h1>Update Contact</h1> -->
 
 <div class="container ">
