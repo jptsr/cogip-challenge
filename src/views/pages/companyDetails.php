@@ -1,5 +1,6 @@
 <?php
 use app\src\core\show\ShowCompanyDetails;
+use app\src\core\show\UpdateLink;
 ob_start();
 ?>
 
@@ -43,6 +44,8 @@ ob_start();
         ?>
     </tbody>
 </table>
+
+<?php UpdateLink::update('entreprise', $_SESSION['details_company'][0]['id_company']) ?>
 
 <?php
 $content = ob_get_clean();

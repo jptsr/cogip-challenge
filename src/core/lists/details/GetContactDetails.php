@@ -24,7 +24,7 @@ class GetContactDetails
             $tables,
             'INNER JOIN', 'contacts.id_company', 'companies.id_company',
             'contacts.id_contact', $id,
-            'contacts.lastname', 'contacts.firstname', 'companies.name', 'contacts.email', 'contacts.phone_number'
+            'contacts.id_contact', 'contacts.lastname', 'contacts.firstname', 'companies.name', 'contacts.email', 'contacts.phone_number'
         );
 
         $modified_data = new ModifiedDataForDisplay($array);

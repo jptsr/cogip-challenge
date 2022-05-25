@@ -1,8 +1,8 @@
 <?php
-
 use app\src\core\show\ShowInvoiceDetails;
-
- ob_start(); ?>
+use app\src\core\show\UpdateLink;
+ob_start();
+?>
 
 <h1>Facture : <span></span> </h1>
 
@@ -42,6 +42,8 @@ use app\src\core\show\ShowInvoiceDetails;
         ?>
     </tbody>
 </table>
+
+<?php UpdateLink::update('facture', $_SESSION['details_invoice'][0]['id_invoice']) ?>
 
 <?php 
 $content = ob_get_clean();

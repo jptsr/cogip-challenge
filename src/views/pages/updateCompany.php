@@ -1,5 +1,11 @@
 <?php ob_start(); ?>
 
+<?php
+echo '<pre>';
+var_dump($_SESSION['get_id_updates']);
+echo '<pre>';
+?>
+
 <!-- <h1>Update Company</h1> -->
 
 <div class="container ">

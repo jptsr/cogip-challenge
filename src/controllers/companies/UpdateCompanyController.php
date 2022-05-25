@@ -7,6 +7,8 @@ class UpdateCompanyController extends Controller
 {
     public function displayView()
     {
+        session_start();
+        
         return $this -> views('updateCompany');
     }
 }
