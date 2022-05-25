@@ -1,25 +1,30 @@
 <?php
-
 use app\src\core\show\{
     ShowCompanies,
     ShowContacts,
     ShowInvoices
 };
-
 ob_start();
 ?>
 
-<div class="container">
-    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-5" >Bienvenue à la COGIP</h1>
     <p>Bonjour <?= $_SESSION['username'] ?> !</p>
     <p>Que souhaitez-vous faire aujourd'hui ?</p>
 
-    <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle facture  </button>
-    <button class=" mx-3" ><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouveau contact </button>
-    <button><img src="./assets/img/plus.png" alt="plus" width="25" height="25">Nouvelle société</button>
+    <a href="/nouvelle-facture" class="admin_btn_link">
+        <button class="admin_add_btn"><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle facture  </button>
+    </a>
+    <a href="/nouveau-contact" class="admin_btn_link">
+        <button class="admin_add_btn mx-3" ><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouveau contact </button>
+    </a>
+    <a href="/nouvelle-entreprise" class="admin_btn_link">
+        <button class="admin_add_btn"><img src="./assets/img/plus.png" alt="plus" width="25" height="25"> Nouvelle société</button>
+    </a>
+    
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dérnieres factures :</caption>
+        <caption class= "mb-3 " >Dernières factures :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Numéro facture</th>
@@ -39,7 +44,7 @@ ob_start();
 
 
     <table class= "table table-bordered caption-top mt-5" >
-        <caption class= "mb-3 fs-2" >Dérnieres contact :</caption>
+        <caption class= "mb-3" >Dernières contact :</caption>
         <thead>
             <tr>
                 <th class="text-center">Nom</th>
@@ -59,7 +64,7 @@ ob_start();
     </table>
 
     <table class= "table table-bordered caption-top mt-5">
-        <caption class= "mb-3 fs-2" >Dérnieres société :</caption>
+        <caption class= "mb-3 " >Dèrnieres société :</caption>
         <thead>
             <tr>
                 <th class="text-center" >Nom</th>

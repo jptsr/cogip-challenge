@@ -7,9 +7,9 @@ ob_start();
 <p>N° TVA : <span><?= $_SESSION['details_company'][0]['VAT'] ?></span> </p>
 <p>Type : <?= $_SESSION['details_company'][0]['id_type'] ?></p>
 
-<table class= "table table-bordered caption-top">
+    <table class= "table table-bordered caption-top">
 
-    <caption class= "mb-3 fs-2">Personnes de contact</caption>
+    <caption class= "mb-3">Personnes de contact</caption>
     <thead>
         <tr>
             <th class="text-center fw-bold" > Nom</th>
@@ -27,7 +27,7 @@ ob_start();
 </table>
 
 <table class= "table table-bordered caption-top">
-    <caption class= "mb-3 fs-2" >Factures</caption>
+    <caption class= "mb-3" >Factures</caption>
     <thead>
         <tr>
             <th class="text-center fw-bold" >N° facture</th>

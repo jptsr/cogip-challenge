@@ -1,17 +1,17 @@
 <?php
-
 use app\src\core\show\ShowCompanies;
 use app\src\core\show\ShowContacts;
 use app\src\core\show\ShowInvoices;
+ob_start();
+?>
 
- ob_start(); ?>
-<div class="container">
-    <h1 class="text-center" >Bienvenue à la COGIP</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-5" >Bienvenue à la COGIP</h1>
     <p>Bonjour <?= $_SESSION['username'] ?> !</p>
     <?= $_SESSION['non_admin'] = ( empty($_SESSION['non_admin']) ) ? '' : $_SESSION['non_admin'] ?>
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2" >Dernières factures :</caption>
+        <caption class= "mb-3" >Dernières factures :</caption>
         <thead>
             <tr>
                 <th  class="text-center fw-bold " >Numéro facture</th>
@@ -29,7 +29,7 @@ use app\src\core\show\ShowInvoices;
     </table>
 
     <table class= "table table-bordered caption-top" >
-        <caption  class= "mb-3 fs-2"   >Dernières contact :</caption>
+        <caption  class= "mb-3"   >Dernières contact :</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom </th>
@@ -48,7 +48,7 @@ use app\src\core\show\ShowInvoices;
     </table>
 
     <table class= "table table-bordered caption-top" >
-        <caption class= "mb-3 fs-2"  >Dernières sociétés :</caption>
+        <caption class= "mb-3 "  >Dernières sociétés :</caption>
         <thead>
             <tr>
                 <th class="text-center fw-bold" >Nom </th>
@@ -65,7 +65,7 @@ use app\src\core\show\ShowInvoices;
             ?>
         </tbody>
     </table>
-
+</div>
 <?php
 $content = ob_get_clean();
 require __DIR__. '/../layout.php';

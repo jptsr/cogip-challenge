@@ -8,7 +8,7 @@ use app\src\core\show\ShowInvoices;
 
 <div class="container ">
   <div class="row  mb-5 mt-5">
-    <h2 class="text-center">COGIP : Listing des factures</h2>
+    <h1 class="text-center">COGIP : Listing des factures</h1>
   </div>
   
   <div class="row justify-content-center ">

@@ -1,18 +1,19 @@
 <?php
-
 use app\src\core\show\ShowInvoiceDetails;
+ob_start();
+?>
 
- ob_start(); ?>
+<div class="container">
 
-<h1>Facture : <span></span> </h1>
+<h1 class="my-5 text-center" >Facture : <span></span> </h1>
 
-<table>
-    <caption>Société liée à la facture</caption>
+<table class= "table table-bordered caption-top">
+    <caption class= "mb-3 ">Société liée à la facture</caption>
     <thead>
         <tr>
-            <th>Nom</th>
-            <th>TVA</th>
-            <th>Type société</th>
+            <th class="text-center fw-bold">Nom</th>
+            <th class="text-center fw-bold">TVA</th>
+            <th class="text-center fw-bold">Type société</th>
         </tr>
     </thead>
     <tbody>
@@ -25,13 +26,13 @@ use app\src\core\show\ShowInvoiceDetails;
 </table>
 
 
-<table>
-    <caption>Personne de contact</caption>
+<table class= "table table-bordered caption-top">
+    <caption class= "mb-3">Personne de contact</caption>
     <thead>
         <tr>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th class="text-center fw-bold">Nom</th>
+            <th class="text-center fw-bold">Email</th>
+            <th class="text-center fw-bold">Phone</th>
         </tr>
     </thead>
     <tbody>

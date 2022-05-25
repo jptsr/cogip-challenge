@@ -7,7 +7,7 @@
     <h2 class="mb-5 mt-5 text-center">Modification du contact</h2>
   </div>
   
-  <div class="row justify-content-center py-5">
+  <div class="row justify-content-center mx-auto py-5 form_style">
     <div class="col-6">
       <form action="" method="post">
 
@@ -36,7 +36,7 @@
 			    </select>
 		    </div>
         <div class="d-grid  justify-content-end">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary forme_btn ">Submit</button>
         </div>     
       </form>
     </div>

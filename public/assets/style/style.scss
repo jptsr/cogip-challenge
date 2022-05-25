@@ -1,3 +1,105 @@
+$color_bg: #54489B;
+$color_text: #B2DCFD;
+$color_bg_all: #F3F3F3;
+$color_btn: #A60F34;
+$color_btn_add: #C2CFF2;
+
 body {
-  color: red;
+ 
+  font-family: 'Fira Mono', monospace;
+  background-color: $color_bg_all;
+}
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 32px;
+}
+.navbar-toggler {
+  background-color: $color_bg;
+  
+}
+.mon_header {
+  font-family: 'Fira Mono', monospace;
+  font-size: 15px;
+  background: #ebf1f6;
+    background: -moz-linear-gradient(left, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    background: -webkit-linear-gradient(left, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    background: linear-gradient(to right, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f6', endColorstr='#ebf1f6', GradientType=1);
+  .navbar-nav {
+    .nav-link, .dropdown-item {
+      color: $color_text;
+    }
+    .nav-item, .dropdown-menu {
+      background-color: $color_bg;
+      border-radius: 5px;
+    }
+  }
+  .header_logo_text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}
+.mon_footer{
+  font-family: 'Fira Mono', monospace;
+  font-weight: 700;
+  background: #ebf1f6;
+    background: -moz-linear-gradient(left, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    background: -webkit-linear-gradient(left, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    background: linear-gradient(to right, #ebf1f6 1%, #abd3ee 39%, #ebf1f6 92%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f6', endColorstr='#ebf1f6', GradientType=1);
+ 
+}
+.footer_slogan {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+}
+.footer_logo_text{
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1E0E85;
+}
+.btn_footer {
+  padding: 0;
+}
+caption{
+  font-size: 18px;
+}
+.login_text{
+  font-size: 20px;
+}
+.form_style{
+  background-color: $color_bg;
+  color: $color_text;
+  border-radius: 5px;
+  width: 70%;
+}
+.forme_btn{
+  background-color: $color_btn;
+}
+.admin_add_btn {
+  padding: 5px;
+  background-color: $color_btn_add;
+  border: none;
+}
+.admin_btn_link{
+  text-decoration: none;
+}
+.btn_poubelle{
+  width: 20px;
+  background-image: url('../img/poubelle.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  border: none;
+  background-position: center;
+  
 }
