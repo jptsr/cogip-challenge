@@ -23,7 +23,10 @@
 			    <label for="phone" class="form-label">Phone</label>
 			    <input type="tel" class="form-control" name="">
 		    </div>
-        
+        <div class="mb-3">
+			    <label for="tva" class="form-label">Pays</label>
+			    <input type="text" class="form-control" name="" value="">
+		    </div>
 		    <div class="mb-3">
 			    <label for="typeSociété" class="form-label">Type de société</label>
 			    <select class="form-select fw-light" name="">
