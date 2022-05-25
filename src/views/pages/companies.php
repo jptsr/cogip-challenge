@@ -16,6 +16,7 @@
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold"> TVA</th>
             <th class="text-center fw-bold"> Pays</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,11 @@
             <td><a href="#"></a></td>
             <td></td>
             <td></td>
+            <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -40,6 +46,7 @@
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold"> TVA</th>
             <th class="text-center fw-bold"> Pays</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +54,11 @@
             <td><a href="#"></a></td>
             <td></td>
             <td></td>
+            <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+            </td>
           </tr>
         </tbody>
       </table>
