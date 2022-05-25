@@ -23,7 +23,11 @@ class ShowContacts
                 <td>$phone_nb</td>
                 <td>$email</td>
                 <td>$company</td>
-                <td class="text-center"><button class="btn btn-light"><img src="./assets/img/poubelle.png" alt="poubell" width="20" height="20" ></button></td>
+                <td class="text-center">
+                    <form action="/liste-contacts-id=$id" method="post">
+                        <input type="submit" class="btn_poubelle" name="delete" value=" ">
+                    </form>
+                </td>
             </tr>
         HTML;
     }

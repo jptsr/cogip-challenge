@@ -1,11 +1,9 @@
 <?php
-
 use app\src\core\show\{
     ShowCompanies,
     ShowContacts,
     ShowInvoices
 };
-
 ob_start();
 ?>
 
