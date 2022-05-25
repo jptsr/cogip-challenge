@@ -17,6 +17,7 @@
             <th class="text-center fw-bold">Dates</th>
             <th class="text-center fw-bold">Société</th>
             <th class="text-center fw-bold">Type</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,11 @@
             <td></td>
             <td></td>
             <td></td>
+            <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_poubelle" name="" value="">
+                    </form>
+            </td>
           </tr>
         </tbody>
       </table>
