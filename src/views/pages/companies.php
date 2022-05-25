@@ -39,7 +39,6 @@ ob_start();
     <div class="col-8 ">
       <table class="table table-bordered caption-top">
         <caption class="mb-3 mt-5 ">Fournisseurs</caption>
-      <!-- Afficher la liste des Fournisseurs  -->
         <thead>
           <tr>
             <th class="text-center fw-bold"> Nom</th>

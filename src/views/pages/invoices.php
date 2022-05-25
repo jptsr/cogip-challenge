@@ -1,10 +1,7 @@
 <?php
-
 use app\src\core\show\ShowInvoices;
-
- ob_start(); ?>
-
-<!-- <h1>List Invoices</h1> -->
+ob_start();
+?>
 
 <div class="container ">
   <div class="row  mb-5 mt-5">

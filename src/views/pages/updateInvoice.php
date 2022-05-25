@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
 
-<!-- <h1>Update Invoice</h1> -->
-
 <div class="container ">
   <div class="row align-items-center">
     <h2 class="mb-5 mt-5 text-center">Modification de la facture</h2>

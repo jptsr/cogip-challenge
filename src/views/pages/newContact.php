@@ -1,10 +1,7 @@
 <?php
-
 use app\src\core\show\ShowCompaniesOption;
-
-ob_start(); ?>
-
-<!-- <h1>New Contact add</h1> -->
+ob_start();
+?>
 
 <div class="container ">
   <div class="row align-items-center">

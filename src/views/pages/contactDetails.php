@@ -1,8 +1,7 @@
 <?php
-
 use app\src\core\show\ShowContactDetails;
-
- ob_start(); ?>
+ob_start();
+?>
 
 <div class="container">
     <h1 class="text-center mb-5 mt-5"  >Contact : <span></span> </h1>
