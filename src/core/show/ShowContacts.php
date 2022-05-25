@@ -25,7 +25,7 @@ class ShowContacts
                 <td>$company</td>
                 <td class="text-center">
                     <form action="/liste-contacts-id=$id" method="post">
-                        <input type="submit" class="btn_poubelle" name="delete" value=" ">
+                        <input type="submit" class="btn_poubelle" name="delete" value="">
                     </form>
                 </td>
             </tr>

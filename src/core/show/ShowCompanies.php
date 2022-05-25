@@ -25,7 +25,7 @@ class ShowCompanies
                 <td>$type</td>
                 <td class="text-center">
                     <form action="/liste-entreprises-id=$id" method="post">
-                        <input type="submit" class="btn_poubelle" name="delete" value=" ">
+                        <input type="submit" class="btn_poubelle" name="delete" value="">
                     </form>
                 </td>
             </tr>
