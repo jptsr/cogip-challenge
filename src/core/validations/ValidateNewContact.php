@@ -8,20 +8,20 @@ class ValidateNewContact
     {
         $number = $arrV[$index];
         $numberCar = $this->validationCar($number, $index, $arrK);
-        $_SESSION[$arrK[$index]] = $numberCar;
+        $_SESSION['erreurNewcontact'][$arrK[$index]] = $numberCar;
     }
     public function validationMail(int $index, array $arrV, array $arrK)
     {
         $email = $arrV[$index];
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $emailBon = $this->validationCar($email, $index, $arrK);
-        $_SESSION[$arrK[$index]] = $emailBon;
+        $_SESSION['erreurNewcontact'][$arrK[$index]] = $emailBon;
     }
     public function validationSpecial(int $index, array $arrV, array $arrK)
     {
         $string = $arrV[$index];
         $ErrorCar = $this->validationCar($string, $index, $arrK);
-        $_SESSION[$arrK[$index]] = $ErrorCar;
+        $_SESSION['erreurNewcontact'][$arrK[$index]] = $ErrorCar;
     }
 
 

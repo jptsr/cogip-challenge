@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php
+
+use app\src\core\show\ShowCompaniesOption;
+
+ob_start(); ?>
 
 <!-- <h1>New Contact add</h1> -->
 
@@ -10,16 +14,11 @@
   <div class="row justify-content-center mx-auto py-5 form_style ">
     <div class="col-6">
       <form action="/nouveau-contact" method="post">
-        <?php
-        echo '<pre>';
-        print_r($_SESSION);
-        echo '</pre>';
-        ?>
         <div class="mb-3">
           <label for="nom" class="form-label">Nom</label>
           <input type="text" class="form-control" name="nom" value="">
-          <?php if (!empty($_SESSION['nom'])) {
-            echo $_SESSION['nom'];
+          <?php if (!empty($_SESSION['erreurNewcontact']['nom'])) {
+            echo $_SESSION['erreurNewcontact']['nom'];
           } else {
             echo '';
           } ?>
@@ -27,8 +26,8 @@
         <div class="mb-3">
           <label for="prenom" class="form-label">Prénom</label>
           <input type="text" class="form-control" name="prenom" value="">
-          <?php if (!empty($_SESSION['prenom'])) {
-            echo $_SESSION['prenom'];
+          <?php if (!empty($_SESSION['erreurNewcontact']['prenom'])) {
+            echo $_SESSION['erreurNewcontact']['prenom'];
           } else {
             echo '';
           } ?>
@@ -36,8 +35,8 @@
         <div class="mb-3">
           <label for="phone" class="form-label">Phone</label>
           <input type="tel" class="form-control" name="phone">
-          <?php if (!empty($_SESSION['phone'])) {
-            echo $_SESSION['phone'];
+          <?php if (!empty($_SESSION['erreurNewcontact']['phone'])) {
+            echo $_SESSION['erreurNewcontact']['phone'];
           } else {
             echo '';
           } ?>
@@ -45,8 +44,8 @@
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" placeholder="name@example.com" name="email">
-          <?php if (!empty($_SESSION['email'])) {
-            echo $_SESSION['email'];
+          <?php if (!empty($_SESSION['erreurNewcontact']['email'])) {
+            echo $_SESSION['erreurNewcontact']['email'];
           } else {
             echo '';
           } ?>
@@ -54,10 +53,16 @@
         <div class="mb-3">
           <label for="société" class="form-label">Société</label>
           <select class="form-select fw-light" name="compagnie">
-            <!-- loop -->
-            <option value="Société1" name="companie">Société1</option>
-            <option value="Société2" name="companie">Société2</option>
+            <?php
+            foreach ($_SESSION['all_companies'][0] as $companie) {
+              ShowCompaniesOption::listOptionsCompanies($companie['name'], $companie['id_company']);
+            }
+            foreach ($_SESSION['all_companies'][1] as $companie) {
+              ShowCompaniesOption::listOptionsCompanies($companie['name'], $companie['id_company']);
+            }
+            ?>
           </select>
+
         </div>
         <div class="d-grid  justify-content-end">
           <button type="submit" class="btn btn-primary forme_btn " name="newContact">Submit</button>
