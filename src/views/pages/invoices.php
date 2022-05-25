@@ -14,13 +14,13 @@ use app\src\core\show\ShowInvoices;
   <div class="row justify-content-center ">
     <div class="col-8 mt-5 ">
       <table class="table table-bordered">
-      <!-- Afficher la liste des invoices -->
         <thead>
           <tr>
             <th class="text-center fw-bold">Numero facture</th>
             <th class="text-center fw-bold">Dates</th>
             <th class="text-center fw-bold">Société</th>
             <th class="text-center fw-bold">Type</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

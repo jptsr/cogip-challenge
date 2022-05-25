@@ -3,7 +3,6 @@ use app\src\core\show\ShowCompanies;
 ob_start();
 ?>
 
-<!-- <h1>List Companies</h1> -->
 <div class="container ">
   <div class="row  mb-5 mt-5">
     <h1 class="text-center">COGIP : Annuaire des sociétés</h1>
@@ -12,13 +11,13 @@ ob_start();
   <div class="row justify-content-center ">
     <div class="col-8 ">
       <table class="table table-bordered caption-top">
-      <!-- Afficher la liste des clients -->
         <caption class="mb-3 ">Clients</caption>
         <thead>
           <tr>
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold"> TVA</th>
             <th class="text-center fw-bold"> Pays</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +45,7 @@ ob_start();
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold"> TVA</th>
             <th class="text-center fw-bold"> Pays</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

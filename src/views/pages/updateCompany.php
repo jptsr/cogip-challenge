@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
 
-<!-- <h1>Update Company</h1> -->
-
 <div class="container ">
   <div class="row align-items-center">
     <h2 class="mb-5 mt-5 text-center">Modification de la société</h2>
@@ -23,7 +21,10 @@
 			    <label for="phone" class="form-label">Phone</label>
 			    <input type="tel" class="form-control" name="">
 		    </div>
-        
+        <div class="mb-3">
+			    <label for="tva" class="form-label">Pays</label>
+			    <input type="text" class="form-control" name="" value="">
+		    </div>
 		    <div class="mb-3">
 			    <label for="typeSociété" class="form-label">Société</label>
 			    <select class="form-select fw-light" name="">
