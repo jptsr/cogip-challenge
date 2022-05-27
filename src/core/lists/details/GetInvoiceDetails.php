@@ -38,10 +38,21 @@ class GetInvoiceDetails
             'invoices.facture_number', 'invoices.date', 'contacts.lastname', 'contacts.firstname'
         );
 
-        $modified_data = new ModifiedDataForDisplay($data);
-        $modified_data->modifiedDate();
-        $final_data = $modified_data->modifiedName();
-        
+        if ( !empty($data) ) {
+            $modified_data = new ModifiedDataForDisplay($data);
+            $modified_data->modifiedDate();
+            $final_data = $modified_data->modifiedName();
+        } else {
+            $final_data = [
+                ["id_invoice" => "/",
+                "facture_number" => "/",
+                "date" => "/",
+                "id_contact" => "/",
+                "id_company" => "/",
+                "id_type" => "/",]
+            ];
+        }
+
         return $final_data;
     }
 
@@ -50,8 +61,19 @@ class GetInvoiceDetails
         $invoices = new GetAllData();
         $data = $invoices->getDataWithId('invoices', 'id_contact', $id);
 
-        $modified_data = new ModifiedDataForDisplay($data);
-        $final_data = $modified_data->modifiedDate();
+        if ( !empty($data) ) {
+            $modified_data = new ModifiedDataForDisplay($data);
+            $final_data = $modified_data->modifiedDate();
+        } else {
+            $final_data = [
+                ["id_invoice" => "/",
+                "facture_number" => "/",
+                "date" => "/",
+                "id_contact" => "/",
+                "id_company" => "/",
+                "id_type" => "/",]
+            ];
+        }
 
         return $final_data;
     }
