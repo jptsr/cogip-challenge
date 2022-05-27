@@ -36,7 +36,7 @@ ob_start();
         </tbody>
     </table>
 
-    <?php UpdateLink::update('contact', $_SESSION['details_contact'][0]['id_contact']) ?>
+    <?php UpdateLink::update('contact', $_SESSION['details_contact'][0]['id_contact'], 'le contact') ?>
 </div>    
 
 <?php 

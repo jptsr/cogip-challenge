@@ -40,7 +40,7 @@ class GetContactDetails
         $data = $affiliate_details->getListAll(
             'contacts',
             'id_company', $id,
-            'lastname', 'firstname', 'phone_number', 'email'
+            'id_contact', 'lastname', 'firstname', 'phone_number', 'email'
         );
 
         if ( !empty($data) ) {

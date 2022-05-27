@@ -35,7 +35,7 @@ class GetInvoiceDetails
             $tables,
             'INNER JOIN', 'invoices.id_contact', 'contacts.id_contact',
             'invoices.id_company', $id,
-            'invoices.facture_number', 'invoices.date', 'contacts.lastname', 'contacts.firstname'
+            'id_invoice', 'invoices.facture_number', 'invoices.date', 'contacts.lastname', 'contacts.firstname'
         );
 
         if ( !empty($data) ) {

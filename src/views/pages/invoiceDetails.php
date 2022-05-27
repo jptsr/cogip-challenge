@@ -44,7 +44,7 @@ ob_start();
     </tbody>
 </table>
 
-<?php UpdateLink::update('facture', $_SESSION['details_invoice'][0]['id_invoice']) ?>
+<?php UpdateLink::update('facture', $_SESSION['details_invoice'][0]['id_invoice'], 'la facture') ?>
 
 <?php 
 $content = ob_get_clean();

@@ -8,46 +8,45 @@ ob_start();
 <p>N° TVA : <span><?= $_SESSION['details_company'][0]['VAT'] ?></span> </p>
 <p>Type : <?= $_SESSION['details_company'][0]['id_type'] ?></p>
 
-    <table class= "table table-bordered caption-top">
-
-<<<<<<< HEAD
-    <caption class= "mb-3">Personnes de contact</caption>
+<table class="table table-bordered caption-top">
+    <caption class="mb-3">Personnes de contact</caption>
     <thead>
         <tr>
-            <th class="text-center fw-bold" > Nom</th>
-            <th class="text-center fw-bold" >Phone</th>
-            <th class="text-center fw-bold" >Email</th>
+            <th class="text-center fw-bold"> Nom</th>
+            <th class="text-center fw-bold">Phone</th>
+            <th class="text-center fw-bold">Email</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <?php
-            foreach ( $_SESSION['details_company'][1] as $value) {
-                ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email']);
-            }
+        foreach ($_SESSION['details_company'][1] as $value) {
+            ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email'], 'contact', $value['id_contact']);
+        }
         ?>
     </tbody>
 </table>
 
-<table class= "table table-bordered caption-top">
-    <caption class= "mb-3" >Factures</caption>
+<table class="table table-bordered caption-top">
+    <caption class="mb-3">Factures</caption>
     <thead>
         <tr>
-            <th class="text-center fw-bold" >N° facture</th>
-            <th class="text-center fw-bold" >Date</th>
-            <th class="text-center fw-bold" >Personne de contact</th>
+            <th class="text-center fw-bold">N° facture</th>
+            <th class="text-center fw-bold">Date</th>
+            <th class="text-center fw-bold">Personne de contact</th>
         </tr>
     </thead>
     <tbody>
         <?php
-            foreach ( $_SESSION['details_company'][2] as $value) {
-                ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname']);
-            }
+        foreach ($_SESSION['details_company'][2] as $value) {
+            ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname'], 'facture', $value['id_invoice']);
+        }
         ?>
     </tbody>
 </table>
 
-<?php UpdateLink::update('entreprise', $_SESSION['details_company'][0]['id_company']) ?>
+<?php UpdateLink::update('entreprise', $_SESSION['details_company'][0]['id_company'], 'la société') ?>
 
 <?php
 $content = ob_get_clean();
-require __DIR__. '/../layout.php';
+require __DIR__ . '/../layout.php';
