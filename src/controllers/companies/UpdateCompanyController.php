@@ -10,6 +10,11 @@ class UpdateCompanyController extends Controller
     public function displayView()
     {
         session_start();
+
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
+
         unset($_SESSION['test']);
         unset($_SESSION['test2']);
         unset($_SESSION['erreurNewCompany']);

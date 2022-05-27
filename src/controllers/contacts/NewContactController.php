@@ -14,8 +14,11 @@ class NewContactController extends Controller
 
         session_start();
 
-        unset($_SESSION['test']);
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
 
+        unset($_SESSION['test']);
         unset($_SESSION['erreurNewcontact']);
 
         $companies_list = new ListCompanies();

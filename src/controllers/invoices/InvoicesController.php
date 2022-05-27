@@ -10,6 +10,10 @@ class InvoicesController extends Controller
     {
         session_start();
 
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
+        
         $invoices = new ListInvoices();
         $_SESSION['all_invoices'] = $invoices->getInvoices();
 

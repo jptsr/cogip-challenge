@@ -9,6 +9,11 @@ class InvoiceDetailsController extends Controller
     public function displayView()
     {
         session_start();
+
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
+        
         $id = $_SESSION['get_id_details'];
 
         $invoice = new GetInvoiceDetails();

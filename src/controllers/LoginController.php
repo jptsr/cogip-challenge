@@ -28,7 +28,7 @@ class LoginController extends Controller
         if ( empty($_SESSION['empty_username']) and empty($_SESSION['wrong_username']) and password_verify($input_pwd, $user_data[0]['password']) ) {
             session_unset();
             $_SESSION['username'] = $user_data[0]['username'];
-            $_SESSION['password'] = $user_data[0]['password'];
+            // $_SESSION['password'] = $user_data[0]['password'];
             $_SESSION['user_status'] = ( $user_data[0]['status'] == 1 ) ? 'admin' : 'moderateur';
 
             if ( $_SESSION['user_status'] == 'admin' ) {

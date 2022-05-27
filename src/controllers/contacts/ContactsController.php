@@ -10,6 +10,10 @@ class ContactsController extends Controller
     {
         session_start();
 
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
+
         $all_contacts = new ListContacts();
         $_SESSION['all_contacts'] = $all_contacts->getContacts();
 

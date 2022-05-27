@@ -10,6 +10,10 @@ class CompaniesController extends Controller
     {
         session_start();
 
+        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
+            header('location: /logout');
+        }
+
         $companies_list = new ListCompanies();
         $_SESSION['all_companies'] = $companies_list->allCompanies();
 

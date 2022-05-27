@@ -9,6 +9,6 @@ class LogoutController extends Controller
         session_unset();
         session_destroy();
         
-        return $this->views('login');
+        header('location: /connexion');
     }
 }
