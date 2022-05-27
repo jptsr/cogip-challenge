@@ -21,4 +21,15 @@ class UpdateData
         $stmt->execute();
         $stmt->closeCursor();
     }
+
+    public function updateCompany (string $table_name, string $name, string $country, string $vat, int $id_type, int $id_company)
+    {
+        $stmt = $this->database->prepare(
+            "UPDATE $table_name
+            SET name = '$name', country = '$country', VAT = '$vat', id_type = $id_type
+            WHERE id_company = $id_company"
+        );
+        $stmt->execute();
+        $stmt->closeCursor();
+    }
 }

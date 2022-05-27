@@ -52,7 +52,6 @@ class GetValidationUpdateContact
             }
             // Si il n'y a pas d'erreur alors on push dans la db et on redirige vers la liste des contacts sinon, on recharge la page
             if ($compteur == 5) {
-                echo 'tout est bon';
                 $update = new PrepareUpdateContact();
                 $final_data = $update->prepareUpdateInDb();
                 
