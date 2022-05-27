@@ -39,6 +39,11 @@ class ShowCompanies
                 <td><a href="/details-entreprise-id=$id">$name</a></td> 
                 <td>$vat_nb</td>
                 <td>$country</td>
+                <td class="text-center">
+                    <form action="/liste-entreprises-id=$id" method="post">
+                        <input type="submit" class="btn_poubelle" name="delete" value="">
+                    </form>
+                </td>
             </tr>
         HTML;
     }

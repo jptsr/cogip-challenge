@@ -15,7 +15,7 @@ class HomeAdminController extends Controller
         Permission::admin();
         
         
-        if ( !empty($_SESSION['get_id_delete']) ) {
+        if ( !empty($_SESSION['get_id_delete']) and ($_SESSION['user_status'] == 'admin') ) {
             echo 'delete';
             $this->delete();
             unset($_SESSION['get_id_delete']);

@@ -41,7 +41,7 @@ ob_start();
         <tbody>
             <?php
                 foreach ( $_SESSION['list_last_contacts'] as $value ) {
-                    ShowContacts::listContacts($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
+                    ShowContacts::listContactsNoAdmin($value['lastname'], $value['phone_number'], $value['email'], $value['name'], $value['id_contact']);
                 }
             ?>
         </tbody>
