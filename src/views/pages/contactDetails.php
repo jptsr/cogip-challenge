@@ -18,13 +18,19 @@ ob_start();
             <tr>
                 <th class="text-center fw-bold" >N°facture</th>
                 <th class="text-center fw-bold" >Date</th>
-                <th></th>
+                <?= $update = ( $_SESSION['details_contact'][1][0]['id_invoice'] == '/' ) ? '' : '<th></th>' ; ?>
             </tr>
         </thead>
         <tbody>
             <?php
                 foreach ($_SESSION['details_contact'][1] as $value) {
-                    ShowContactDetails::displayInvoices($value['facture_number'], $value['date']);
+                    $exist = ( $value['id_invoice'] == '/' ) ? false : true;
+                    
+                    if ( !$exist ) {
+                        ShowContactDetails::displayInvoices2($value['facture_number'], $value['date']);
+                    } else {
+                        ShowContactDetails::displayInvoices($value['facture_number'], $value['date'], 'facture', $value['id_invoice']);
+                    }
                 }
             ?>
         </tbody>
