@@ -11,17 +11,26 @@
         <caption class= "mb-3 "> Contact pour les factures :</caption>
         <thead>
             <tr>
-                <th class=" fw-bold" >N°facture</th>
-                <th class=" fw-bold" >Date</th>
+                <th class="text-center fw-bold" >N°facture</th>
+                <th class="text-center fw-bold" >Date</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td></td>
                 <td></td>
+                <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_modifier" name="" value="">
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>    
+
+    <!-- modifier contact -->
+    <a href="/modification-contact">Modifier contact</a>
 </div>    
 
 
