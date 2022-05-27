@@ -1,4 +1,5 @@
 <?php
+
 namespace app\src\core\show;
 
 class ShowInvoiceDetails
@@ -16,12 +17,23 @@ class ShowInvoiceDetails
                     </form>
                 </td>
             </tr>
-            HTML;
-        }
-        
-        public static function displayContact(string $name, string $email, string $phone_nb, string $page_name, int $id)
-        {
-            echo <<<HTML
+        HTML;
+    }
+
+    public static function displayCompany2(string $name, string $vat_nb, string $type)
+    {
+        echo <<<HTML
+            <tr>
+                <td>$name</td> 
+                <td>$vat_nb</td>
+                <td>$type</td>
+            </tr>
+        HTML;
+    }
+
+    public static function displayContact(string $name, string $email, string $phone_nb, string $page_name, int $id)
+    {
+        echo <<<HTML
             <tr>
                 <td>$name</td>
                 <td>$email</td>
@@ -31,6 +43,17 @@ class ShowInvoiceDetails
                         <input type="submit" class="btn_modifier" name="" value="">
                     </form>
                 </td>
+            </tr>
+        HTML;
+    }
+
+    public static function displayContact2(string $name, string $email, string $phone_nb)
+    {
+        echo <<<HTML
+            <tr>
+                <td>$name</td>
+                <td>$email</td>
+                <td>$phone_nb</td>
             </tr>
         HTML;
     }

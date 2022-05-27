@@ -15,13 +15,18 @@ ob_start();
             <th class="text-center fw-bold"> Nom</th>
             <th class="text-center fw-bold">Phone</th>
             <th class="text-center fw-bold">Email</th>
-            <th></th>
+            <?= $update = ( $_SESSION['details_company'][1][0]['id_contact'] == '/' ) ? '' : '<th></th>' ; ?>
         </tr>
     </thead>
     <tbody>
         <?php
         foreach ($_SESSION['details_company'][1] as $value) {
-            ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email'], 'contact', $value['id_contact']);
+            $exist = ( $value['id_contact'] == '/' ) ? false : true;
+            if ( !$exist ) {
+                ShowCompanyDetails::displayContacts2($value['lastname'], $value['phone_number'], $value['email']);
+            } else {
+                ShowCompanyDetails::displayContacts($value['lastname'], $value['phone_number'], $value['email'], 'contact', $value['id_contact']);
+            }
         }
         ?>
     </tbody>
@@ -34,12 +39,18 @@ ob_start();
             <th class="text-center fw-bold">N° facture</th>
             <th class="text-center fw-bold">Date</th>
             <th class="text-center fw-bold">Personne de contact</th>
+            <?= $update = ( $_SESSION['details_company'][1][0]['id_invoice'] == '/' ) ? '' : '<th></th>' ; ?>
         </tr>
     </thead>
     <tbody>
         <?php
         foreach ($_SESSION['details_company'][2] as $value) {
-            ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname'], 'facture', $value['id_invoice']);
+            $exist = ( $value['id_invoice'] == '/' ) ? false : true;
+            if ( !$exist ) {
+                ShowCompanyDetails::displayContacts2($value['facture_number'], $value['date'], $value['lastname']);
+            } else {
+                ShowCompanyDetails::displayContacts($value['facture_number'], $value['date'], $value['lastname'], 'facture', $value['id_invoice']);
+            }
         }
         ?>
     </tbody>
