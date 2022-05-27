@@ -2,7 +2,7 @@
 
 namespace app\src\core\validations;
 
-class ValidationNewCompany
+class ValidateNewCompany
 {
     public function validationSpecial(int $index, array $arrV, array $arrK)
     {
@@ -44,28 +44,27 @@ class ValidationNewCompany
     }
     public function validationTva($string, $patternTVA)
     {
-        $compteur = 0;
-        if (preg_match_all($patternTVA[0], $string, $matches)) {
+        if (strlen($string) == 11) {
+            preg_match_all($patternTVA[0], $string, $matches);
             $sum = count($matches[0]);
-            $compteur += $sum;
             if ($sum < 9 || $sum > 9) {
                 return 'Il faut 9 nombres.';
-            } elseif (preg_match_all($patternTVA[1], $string, $matches)) {
-                $add = count($matches[0]);
-                $compteur += $add;
-                if ($add != 0) {
-                    return 'Il a des caractère spéciaux non admis.';
-                }
             } else {
-                if (preg_match_all($patternTVA[2], $string, $matches)) {
+                preg_match_all($patternTVA[2], $string, $matches);
+                $add = count($matches[0]);
+                if ($add < 2 || $add > 2) {
+                    return 'Il faut 2 lettres.';
+                }else{
+                    preg_match_all($patternTVA[1], $string, $matches);
                     $plus = count($matches[0]);
-                    $compteur += $plus;
-                    if ($compteur != 11) {
-                        return 'Il manque des caractères.';
+                    if($plus != 0){
+                        return 'Les caractères spéciaux ne sont pas admis.';
                     }
                 }
             }
-        }
+        } else {
+            return 'Il faut 2 lettres et 9 nombres.';
+        } 
     }
     public function validationNumberPhone($string, $pattern)
     {

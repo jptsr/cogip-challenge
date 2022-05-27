@@ -3,7 +3,9 @@
 namespace app\src\controllers\companies;
 
 use app\src\controllers\Controller;
-use app\src\core\validations\ValidationNewCompany;
+use app\src\core\lists\companies\ListCompanies;
+use app\src\core\validations\ValidateNewCompany;
+use app\src\models\CreateData;
 
 class NewCompanyController extends Controller
 {
@@ -11,46 +13,79 @@ class NewCompanyController extends Controller
     {
         session_start();
 
-        unset($_SESSION['test']);
+        unset($_SESSION['test']); // delete ça et en dessous aussi
+        unset($_SESSION['test1']);
 
-        unset($_SESSION['erreurNewcompagnie']);
 
-        $this->ValidationComplete(); // changer pour compagnie
+        unset($_SESSION['erreurNewCompany']);
+
+
+        $companies_list = new ListCompanies();
+        $_SESSION['all_companies'] = $companies_list->allCompanies();
+
+        $this->ValidationCompleteCompany();
 
         return $this->views('newCompany');
     }
 
-    private function ValidationComplete()
+    private function ValidationCompleteCompany()
     {
         if (isset($_POST['newCompany'])) {
             $data = $_POST;
             $arrKeys = array_keys($data);
             $arrValues = [];
-            // $arrSession = [];
+            $arrSession = [];
             // J'assigne les values de $data dans un tableau
             foreach ($data as $datas) {
                 array_push($arrValues, $datas);
             }
             // J'assigne la valeur NULL dans chaque champ avec '' 
-            for ($k = 0; $k < 4; $k++) { // ATTENTION je mets 4 mais c'est 5 avec la pays
+            for ($k = 0; $k < 5; $k++) {
                 if ($arrValues[$k] == '') {
                     $arrValues[$k] = '';
                 }
             }
             for ($m = 0; $m < 5; $m++) {
-                if ($arrKeys[$m] == 'phone') {
-                    $phoneValidation = new ValidationNewCompany();
-                    $phoneValidation->validationPhone($m, $arrValues, $arrKeys); //pas encore
+                if ($arrKeys[$m] == 'phone') { // normalement le phone n'est pas utilisé
+                    $phoneCompanyValidation = new ValidateNewCompany();
+                    $phoneCompanyValidation->validationPhone($m, $arrValues, $arrKeys, $arrSession);
                 } elseif ($arrKeys[$m] == 'tva') {
-                    $tvaValidation = new ValidationNewCompany();
-                    $tvaValidation->validationTVAspecial($m, $arrValues, $arrKeys); // pas encore
+                    $tvaValidation = new ValidateNewCompany();
+                    $tvaValidation->validationTVAspecial($m, $arrValues, $arrKeys, $arrSession);
                 } else {
-                    $otherValidation = new ValidationNewCompany();
-                    $otherValidation->validationSpecial($m, $arrValues, $arrKeys);
+                    $otherCompanyValidation = new ValidateNewCompany();
+                    $otherCompanyValidation->validationSpecial($m, $arrValues, $arrKeys, $arrSession);
                 }
             }
-
-
+            // J'assigne les keys et les values dans un nouveau tableau
+            for ($i = 0; $i < 4; $i++) {
+                $arrSession[$arrKeys[$i]] = $arrValues[$i];
+            }
+            $_SESSION['keys'] = $arrKeys;
+            $_SESSION['values'] = $arrValues;
+            $_SESSION['session'] = $arrSession;
+            unset($_SESSION['erreurNewCompany']['newCompany']);
+            // La suite pour vérifié la validation ici
+            if (isset($_POST['newCompany'])) {
+                $compteur = 0;
+                foreach ($_SESSION['erreurNewCompany'] as $data) {
+                    if ($data == '') {
+                        $compteur += 1;
+                    }
+                }
+                // Si il n'y a pas d'erreur alors on push dans la db et on redirige vers la liste des contacts sinon, on recharge la page
+                if ($compteur == 4) {
+                    $CreateNewContactDb = new CreateData();
+                    $CreateNewContactDb->CreateNewCompany('companies', $_POST['nom'], $_POST['pays'], $_POST['tva'], $_POST['type']);
+                    header('location: /liste-entreprises');
+                    $compteur = 0;
+                } elseif ($compteur == 0) {
+                    // je n'ai rien à mettre ici
+                } else {
+                    // header('location: /nouveau-contact');
+                    $compteur = 0;
+                }
+            }
         }
     }
 }
