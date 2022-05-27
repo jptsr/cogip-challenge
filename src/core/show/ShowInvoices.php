@@ -22,8 +22,8 @@ class ShowInvoices
                 <td>$date</td>
                 <td>$company</td>
                 <td class="text-center">
-                    <form action="" method="post">
-                        <input type="submit" class="btn_poubelle" name="" value="">
+                    <form action="/liste-factures-id=$id" method="post">
+                        <input type="submit" class="btn_poubelle" name="delete" value="">
                     </form>
                 </td>
             </tr>
