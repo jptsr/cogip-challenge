@@ -10,6 +10,7 @@
                 <th class="text-center fw-bold" >Nom</th>
                 <th class="text-center fw-bold" >TVA</th>
                 <th class="text-center fw-bold" >Type société</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_modifier" name="" value="">
+                    </form>
+                </td>
             </tr>
 
         </tbody>
@@ -30,6 +36,7 @@
                 <th class="text-center fw-bold" >Nom</th>
                 <th class="text-center fw-bold" >Email</th>
                 <th class="text-center fw-bold" >Phone</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -37,10 +44,18 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td class="text-center">
+                   <form action="" method="post">
+                        <input type="submit" class="btn_modifier" name="" value="">
+                    </form>
+                </td>
             </tr>
             
         </tbody>
     </table>
+
+    <!-- modifier société -->
+    <a href="/modification-facture">Modifier facture</a>
 </div>
 
 <?php 
