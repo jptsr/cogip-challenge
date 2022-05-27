@@ -13,12 +13,7 @@ class NewCompanyController extends Controller
     {
         session_start();
 
-        unset($_SESSION['test']); // delete ça et en dessous aussi
-        unset($_SESSION['test1']);
-
-
         unset($_SESSION['erreurNewCompany']);
-
 
         $companies_list = new ListCompanies();
         $_SESSION['all_companies'] = $companies_list->allCompanies();
@@ -61,11 +56,9 @@ class NewCompanyController extends Controller
             for ($i = 0; $i < 4; $i++) {
                 $arrSession[$arrKeys[$i]] = $arrValues[$i];
             }
-            $_SESSION['keys'] = $arrKeys;
-            $_SESSION['values'] = $arrValues;
-            $_SESSION['session'] = $arrSession;
+
             unset($_SESSION['erreurNewCompany']['newCompany']);
-            // La suite pour vérifié la validation ici
+
             if (isset($_POST['newCompany'])) {
                 $compteur = 0;
                 foreach ($_SESSION['erreurNewCompany'] as $data) {
@@ -73,16 +66,26 @@ class NewCompanyController extends Controller
                         $compteur += 1;
                     }
                 }
+                // Mise en forme pour la tva
+                $string = $arrSession['tva'];
+                $p1string = substr($string, 0, 2);
+                $p2string = substr($string, 2, 3);
+                $p3string = substr($string, 5, 3);
+                $p4string = substr($string, 8, 3);
+                $fullString = strtoupper($p1string) . " " . $p2string . " " . $p3string . " " . $p4string;
+                $_SESSION['test'] = $arrValues;
+                $arrValues[1] = $fullString;
+                $arrSession['tva'] = $arrValues[1];
+                $_SESSION['test2'] = $arrValues;
                 // Si il n'y a pas d'erreur alors on push dans la db et on redirige vers la liste des contacts sinon, on recharge la page
                 if ($compteur == 4) {
                     $CreateNewContactDb = new CreateData();
-                    $CreateNewContactDb->CreateNewCompany('companies', $_POST['nom'], $_POST['pays'], $_POST['tva'], $_POST['type']);
+                    $CreateNewContactDb->CreateNewCompany('companies', $_POST['nom'], $_POST['pays'], $arrSession['tva'], $_POST['type']);
                     header('location: /liste-entreprises');
                     $compteur = 0;
                 } elseif ($compteur == 0) {
                     // je n'ai rien à mettre ici
                 } else {
-                    // header('location: /nouveau-contact');
                     $compteur = 0;
                 }
             }
