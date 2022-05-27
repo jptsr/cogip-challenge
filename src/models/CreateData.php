@@ -16,7 +16,14 @@ class CreateData
     public function CreateNewContact($table_name, $lastname, $firstname, $phone_number, $email, $id_company)
     {
         $stmt = $this->database->prepare("INSERT INTO $table_name VALUES (0, '$lastname', '$firstname', '$phone_number', '$email', '$id_company') ");
-        
+
+        $stmt->execute();
+        $stmt->closeCursor();
+    }
+    public function CreateNewCompany($table_name, $name, $country, $vat, $id_type)
+    {
+        $stmt = $this->database->prepare("INSERT INTO $table_name VALUES (0, '$name', '$country', '$vat', '$id_type') ");
+
         $stmt->execute();
         $stmt->closeCursor();
     }

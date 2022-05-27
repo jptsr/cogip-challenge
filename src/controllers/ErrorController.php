@@ -11,6 +11,12 @@ class ErrorController extends Controller
             $page = substr($_SERVER['REQUEST_URI'], 9);
             $this->getDetailsId($_SERVER['REQUEST_URI'], $page);
         }
+
+        if ( preg_match('/\d+/', explode('=', $_SERVER['REQUEST_URI'])[1]) and substr($_SERVER['REQUEST_URI'], 0, 13) == '/modification' ) {
+            session_start();
+            $page = substr($_SERVER['REQUEST_URI'], 14);
+            $this->getUpdatesId($_SERVER['REQUEST_URI'], $page);
+        }
         
         return $this->views('error');
     }
@@ -22,6 +28,16 @@ class ErrorController extends Controller
         $id = $url[1];
         $location = 'location: /details-'.$page;
         $_SESSION['get_id_details'] = $id;
+        header($location);
+    }
+
+    private function getUpdatesId($url, $page)
+    {
+        $page = explode('-', $url)[1];
+        $url = explode('=', $url);
+        $id = $url[1];
+        $location = 'location: /modification-'.$page;
+        $_SESSION['get_id_updates'] = $id;
         header($location);
     }
 }

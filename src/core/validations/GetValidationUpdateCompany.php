@@ -1,29 +1,13 @@
 <?php
+namespace app\src\core\validations;
 
-namespace app\src\controllers\companies;
-
-use app\src\controllers\Controller;
-use app\src\core\lists\companies\ListCompanies;
+use app\src\core\update\PrepareUpdateCompany;
 use app\src\core\validations\ValidateNewCompany;
-use app\src\models\CreateData;
+use app\src\models\UpdateData;
 
-class NewCompanyController extends Controller
+class GetValidationUpdateCompany
 {
-    public function displayView()
-    {
-        session_start();
-
-        unset($_SESSION['erreurNewCompany']);
-
-        $companies_list = new ListCompanies();
-        $_SESSION['all_companies'] = $companies_list->allCompanies();
-
-        $this->ValidationCompleteCompany();
-
-        return $this->views('newCompany');
-    }
-
-    private function ValidationCompleteCompany()
+    public function ValidationCompleteCompany()
     {
         if (isset($_POST['newCompany'])) {
             $data = $_POST;
@@ -35,12 +19,12 @@ class NewCompanyController extends Controller
                 array_push($arrValues, $datas);
             }
             // J'assigne la valeur NULL dans chaque champ avec '' 
-            for ($k = 0; $k < 5; $k++) {
+            for ($k = 0; $k < 4; $k++) {
                 if ($arrValues[$k] == '') {
                     $arrValues[$k] = '';
                 }
             }
-            for ($m = 0; $m < 5; $m++) {
+            for ($m = 0; $m < 4; $m++) {
                 if ($arrKeys[$m] == 'phone') { // normalement le phone n'est pas utilisé
                     $phoneCompanyValidation = new ValidateNewCompany();
                     $phoneCompanyValidation->validationPhone($m, $arrValues, $arrKeys, $arrSession);
@@ -62,7 +46,7 @@ class NewCompanyController extends Controller
             if (isset($_POST['newCompany'])) {
                 $compteur = 0;
                 foreach ($_SESSION['erreurNewCompany'] as $data) {
-                    if ($data == '') {
+                    if ($data == '' or $data == NULL) {
                         $compteur += 1;
                     }
                 }
@@ -79,10 +63,15 @@ class NewCompanyController extends Controller
                 $_SESSION['test2'] = $arrValues;
                 // Si il n'y a pas d'erreur alors on push dans la db et on redirige vers la liste des contacts sinon, on recharge la page
                 if ($compteur == 4) {
-                    $CreateNewContactDb = new CreateData();
-                    $CreateNewContactDb->CreateNewCompany('companies', $_POST['nom'], $_POST['pays'], $arrSession['tva'], $_POST['type']);
-                    header('location: /liste-entreprises');
+                    $update = new PrepareUpdateCompany();
+                    $final_data = $update->prepareUpdateInDb();
+
+                    $update_company = new UpdateData();
+                    $update_company->updateCompany('companies', $final_data['name'], $final_data['country'], $final_data['vat'], $final_data['type'], $_SESSION['get_id_updates']);
+
                     $compteur = 0;
+
+                    header('location: /liste-entreprises');
                 } elseif ($compteur == 0) {
                     // je n'ai rien à mettre ici
                 } else {

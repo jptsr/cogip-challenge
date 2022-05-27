@@ -1,5 +1,6 @@
 <?php
 use app\src\core\show\ShowContactDetails;
+use app\src\core\show\UpdateLink;
 ob_start();
 ?>
 
@@ -27,6 +28,8 @@ ob_start();
             ?>
         </tbody>
     </table>    
+
+    <?php UpdateLink::update('contact', $_SESSION['details_contact'][0]['id_contact']) ?>
 </div>    
 
 <?php 
