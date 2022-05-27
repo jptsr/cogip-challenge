@@ -17,7 +17,8 @@ use app\src\controllers\{
     LoginController, 
     HomeController, 
     HomeAdminController, 
-    ErrorController
+    ErrorController,
+    LogoutController
 };
 use app\src\controllers\invoices\{
     InvoiceDetailsController, 
@@ -89,6 +90,10 @@ switch ($url)
     case '/nouvelle-facture':
         $newInvoiceCtrl = new NewInvoiceController();
         $newInvoiceCtrl -> displayView();
+        break;
+    case '/logout':
+        $logoutCtrl = new LogoutController();
+        $logoutCtrl->displayView();
         break;
     default:
         $errorCtrl = new ErrorController();
