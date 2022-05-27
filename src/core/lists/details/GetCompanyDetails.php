@@ -38,7 +38,7 @@ class GetCompanyDetails
         $data = $invoice->getListAll(
             'companies',
             'companies.id_company', $id,
-            'name', 'VAT', 'id_type'
+            'id_company', 'name', 'VAT', 'id_type'
         );        
 
         $modified_data = new ModifiedDataForDisplay($data);

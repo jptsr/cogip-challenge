@@ -13,12 +13,13 @@ ob_start();
             <th class="text-center fw-bold">Nom</th>
             <th class="text-center fw-bold">TVA</th>
             <th class="text-center fw-bold">Type société</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <?php
             foreach ($_SESSION['details_invoice'][1] as $value) {
-                ShowInvoiceDetails::displayCompany($value['name'], $value['VAT'], $value['id_type']);
+                ShowInvoiceDetails::displayCompany($value['name'], $value['VAT'], $value['id_type'], 'entreprise', $value['id_company']);
             }
         ?>
     </tbody>
@@ -31,12 +32,13 @@ ob_start();
             <th class="text-center fw-bold">Nom</th>
             <th class="text-center fw-bold">Email</th>
             <th class="text-center fw-bold">Phone</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <?php
             foreach ($_SESSION['details_invoice'][2] as $value) {
-                ShowInvoiceDetails::displayContact($value['lastname'], $value['email'], $value['phone_number']);
+                ShowInvoiceDetails::displayContact($value['lastname'], $value['email'], $value['phone_number'], 'contact', $value['id_contact']);
             }
         ?>
     </tbody>
