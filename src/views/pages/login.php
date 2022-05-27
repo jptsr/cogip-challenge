@@ -13,14 +13,14 @@
         <div class="mb-3">
           <label for="identifiant" class="form-label">Votre identifiant</label>
           <input type="text" class="form-control" id="" name="username" aria-describedby="identifiant" placeholder="Jean-Christian">
-          <?= $empty_username = ( empty($_SESSION['empty_username']) ) ? '' : $_SESSION['empty_username'] ; ?>
-          <?= $wrong_username = ( empty($_SESSION['wrong_username']) ) ? '' : $_SESSION['wrong_username'] ; ?>
+          <?= $empty_username = ( empty($_SESSION['identifiant_vide']) ) ? '' : $_SESSION['identifiant_vide'] ; ?>
+          <?= $wrong_username = ( empty($_SESSION['mauvais_identifiant']) ) ? '' : $_SESSION['mauvais_identifiant'] ; ?>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Votre mot de passe</label>
           <input type="password" class="form-control" id="password" name="pwd">
-          <?= $empty_pwd = ( empty($_SESSION['empty_password']) ) ? '' : $_SESSION['empty_password'] ; ?>
-          <?= $wrong_pwd = ( empty($_SESSION['wrong_password']) ) ? '' : $_SESSION['wrong_password'] ; ?>
+          <?= $empty_pwd = ( empty($_SESSION['mot-de-passe_vide']) ) ? '' : $_SESSION['mot-de-passe_vide'] ; ?>
+          <?= $wrong_pwd = ( empty($_SESSION['mauvais_mot-de-passe']) ) ? '' : $_SESSION['mauvais_mot-de-passe'] ; ?>
         </div>
         <div class="d-grid  justify-content-end">
           <button type="submit" class="btn btn-primary forme_btn" name="login">Submit</button>

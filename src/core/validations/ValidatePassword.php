@@ -22,7 +22,7 @@ class ValidatePassword
         if ( !empty($this->pwd) and !ctype_space($this->pwd) ) {
             return $this->pwd;
         } else {
-            return ErrorMsgValidation::createErrorMsg('empty', 'password');
+            return ErrorMsgValidation::createErrorMsg('mot-de-passe', 'vide');
         }
     }
 }

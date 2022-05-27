@@ -16,7 +16,7 @@ class GetValidation
         $input->setPassword($password);
         return $input->validate();
 
-        if ( empty($_SESSION['empty_password']) and empty($_SESSION['wrong_password']) ) {
+        if ( empty($_SESSION['mot-de-passe_vide']) and empty($_SESSION['mauvais_mot-de-passe']) ) {
             return $input->getPassword();
         } else {
             return $input->validate();

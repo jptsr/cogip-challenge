@@ -24,7 +24,7 @@ class ValidateUsername
             $isMatch = new Login();
             return $isMatch->matchInDb($this->username);
         } else {
-            return ErrorMsgValidation::createErrorMsg('empty', 'username');
+            return ErrorMsgValidation::createErrorMsg('identifiant', 'vide');
         }
     }
 }

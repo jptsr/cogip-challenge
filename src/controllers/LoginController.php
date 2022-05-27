@@ -25,7 +25,7 @@ class LoginController extends Controller
         $password = new GetValidation();
         $input_pwd = $password->getPasswordValidation($_POST['pwd']);
 
-        if ( empty($_SESSION['empty_username']) and empty($_SESSION['wrong_username']) and password_verify($input_pwd, $user_data[0]['password']) ) {
+        if ( empty($_SESSION['empty_username']) and empty($_SESSION['mauvais_identifiant']) and password_verify($input_pwd, $user_data[0]['password']) ) {
             session_unset();
             $_SESSION['username'] = $user_data[0]['username'];
             // $_SESSION['password'] = $user_data[0]['password'];
@@ -37,8 +37,8 @@ class LoginController extends Controller
                 header('location: /menu');
             }
         } else {
-            if ( empty($_SESSION['empty_password']) ) {
-                ErrorMsgValidation::createErrorMsg('wrong', 'password');
+            if ( empty($_SESSION['mot-de-passe_vide']) ) {
+                ErrorMsgValidation::createErrorMsg('mauvais', 'mot-de-passe');
             }
         }
     }

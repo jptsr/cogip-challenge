@@ -13,7 +13,7 @@ class Login
         if ( !empty($does_exist) ) {
             return $does_exist;
         } else {
-            return ErrorMsgValidation::createErrorMsg('wrong', 'username');
+            return ErrorMsgValidation::createErrorMsg('mauvais', 'identifiant');
         }
     }
 }
