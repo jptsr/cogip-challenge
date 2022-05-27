@@ -2,6 +2,7 @@
 
 namespace app\src\controllers\companies;
 use app\src\controllers\Controller;
+use app\src\core\Permission;
 use app\src\core\update\PrepareUpdateCompany;
 use app\src\core\validations\GetValidationUpdateCompany;
 
@@ -11,9 +12,8 @@ class UpdateCompanyController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
+        Permission::admin();
 
         unset($_SESSION['test']);
         unset($_SESSION['test2']);

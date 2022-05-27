@@ -2,15 +2,15 @@
 
 namespace app\src\controllers;
 
+use app\src\core\Permission;
+
 class ErrorController extends Controller
 {
     public function displayView()
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
         
         if ( preg_match('/\d+/', explode('=', $_SERVER['REQUEST_URI'])[1]) and substr($_SERVER['REQUEST_URI'], 0, 8) == '/details' ) {
             session_start();

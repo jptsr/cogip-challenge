@@ -3,6 +3,7 @@
 namespace app\src\controllers\contacts;
 use app\src\controllers\Controller;
 use app\src\core\lists\details\GetContactDetails;
+use app\src\core\Permission;
 
 class ContactDetailsController extends Controller
 {
@@ -10,9 +11,7 @@ class ContactDetailsController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
         
         $id = $_SESSION['get_id_details'];
 

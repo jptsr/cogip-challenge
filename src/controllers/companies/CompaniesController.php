@@ -3,6 +3,7 @@
 namespace app\src\controllers\companies;
 use app\src\controllers\Controller;
 use app\src\core\lists\companies\ListCompanies;
+use app\src\core\Permission;
 
 class CompaniesController extends Controller
 {
@@ -10,9 +11,7 @@ class CompaniesController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
 
         $companies_list = new ListCompanies();
         $_SESSION['all_companies'] = $companies_list->allCompanies();

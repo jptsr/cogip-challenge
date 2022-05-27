@@ -3,6 +3,7 @@
 namespace app\src\controllers\contacts;
 use app\src\controllers\Controller;
 use app\src\core\lists\contacts\ListContacts;
+use app\src\core\Permission;
 
 class ContactsController extends Controller
 {
@@ -10,9 +11,7 @@ class ContactsController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
 
         $all_contacts = new ListContacts();
         $_SESSION['all_contacts'] = $all_contacts->getContacts();

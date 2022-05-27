@@ -4,6 +4,7 @@ namespace app\src\controllers\companies;
 
 use app\src\controllers\Controller;
 use app\src\core\lists\companies\ListCompanies;
+use app\src\core\Permission;
 use app\src\core\validations\ValidateNewCompany;
 use app\src\models\CreateData;
 
@@ -13,9 +14,7 @@ class NewCompanyController extends Controller
     {
         session_start();
         
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
 
         unset($_SESSION['erreurNewCompany']);
 

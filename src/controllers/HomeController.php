@@ -2,6 +2,7 @@
 namespace app\src\controllers;
 
 use app\src\core\lists\menu\CallListsMenu;
+use app\src\core\Permission;
 
 class HomeController extends Controller
 {
@@ -9,9 +10,7 @@ class HomeController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
 
         $callLists = new CallListsMenu();
         $callLists->call();

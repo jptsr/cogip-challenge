@@ -3,6 +3,7 @@
 namespace app\src\controllers\contacts;
 use app\src\controllers\Controller;
 use app\src\core\lists\companies\ListCompanies;
+use app\src\core\Permission;
 use app\src\core\update\PrepareUpdateContact;
 use app\src\core\validations\GetValidationUpdateContact;
 
@@ -12,9 +13,8 @@ class UpdateContactController extends Controller
     {
         session_start();
 
-        if ( empty($_SESSION['username']) or empty($_SESSION['user_status']) ) {
-            header('location: /logout');
-        }
+        Permission::log();
+        Permission::admin();
         
         unset($_SESSION['test']);
         unset($_SESSION['erreurNewcontact']);
