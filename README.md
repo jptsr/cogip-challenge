@@ -22,11 +22,11 @@ We propose that you code a web application which will respond to the needs and d
 
 # Members of the Group #
 
-Kevin-May [@yashidao] (https://github.com/yashidao)
-Julie [@jptsr] (https://github.com/jptsr)
-Fydélis [@fidelysnadison] (https://github.com/fidelysnadison)
-Elena [@tozurelena] (https://github.com/tozurelena)
-Mara [@mara85kh] (https://github.com/mara85kh)
+Kevin-May [@yashidao](https://github.com/yashidao)
+Julie [@jptsr](https://github.com/jptsr)
+Fydélis [@fidelysnadison](https://github.com/fidelysnadison)
+Elena [@tozurelena](https://github.com/tozurelena)
+Mara [@mara85kh](https://github.com/mara85kh)
 
 # Graphic Guideline #
 
@@ -34,7 +34,7 @@ Mara [@mara85kh] (https://github.com/mara85kh)
 
 # Project Management #
 
-![Project management used with Trello & Discord] (https://trello.com/b/usPmMRrw/deadline-27-mai)
+![Project management used with Trello & Discord](https://trello.com/b/usPmMRrw/deadline-27-mai)
 
 # Copyright #
 
