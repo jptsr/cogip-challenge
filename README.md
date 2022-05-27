@@ -34,7 +34,7 @@ Mara [@mara85kh](https://github.com/mara85kh)
 
 # Project Management #
 
-![Project management used with Trello & Discord](https://trello.com/b/usPmMRrw/deadline-27-mai)
+[Project management used with Trello & Discord](https://trello.com/b/usPmMRrw/deadline-27-mai)
 
 # Copyright #
 
