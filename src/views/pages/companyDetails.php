@@ -10,6 +10,7 @@ ob_start();
 
     <table class= "table table-bordered caption-top">
 
+<<<<<<< HEAD
     <caption class= "mb-3">Personnes de contact</caption>
     <thead>
         <tr>

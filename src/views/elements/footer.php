@@ -17,7 +17,7 @@
                         <a class="nav-link link-dark" href="/liste-contacts">Contacts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-dark" href="/connexion">Connexion</a>
+                        <a class="nav-link link-dark" href="">Déconnexion</a>
                     </li>
                 </ul>
             </div>

@@ -51,7 +51,7 @@
                             </li>
                         <!-- connexion -->
                             <li class="nav-item" >
-                                <a class="nav-link"  href="/connexion">Connexion</a>
+                                <a class="nav-link"  href="">Déconnexion</a>
                             </li>
                         <!-- admin -->
                             <li class="nav-item dropdown">

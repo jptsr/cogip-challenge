@@ -24,7 +24,6 @@ ob_start();
     </tbody>
 </table>
 
-
 <table class= "table table-bordered caption-top">
     <caption class= "mb-3">Personne de contact</caption>
     <thead>

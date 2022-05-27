@@ -16,8 +16,9 @@ ob_start();
         <caption class= "mb-3 "> Contact pour les factures :</caption>
         <thead>
             <tr>
-                <th class=" fw-bold" >N°facture</th>
-                <th class=" fw-bold" >Date</th>
+                <th class="text-center fw-bold" >N°facture</th>
+                <th class="text-center fw-bold" >Date</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +28,7 @@ ob_start();
                 }
             ?>
         </tbody>
-    </table>    
+    </table>
 
     <?php UpdateLink::update('contact', $_SESSION['details_contact'][0]['id_contact']) ?>
 </div>    
