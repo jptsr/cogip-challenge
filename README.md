@@ -22,10 +22,10 @@ We propose that you code a web application which will respond to the needs and d
 
 ## Members of the Group  
 
-**Back**  
+***-Back-***  
 Kevin-May [@yashidao](https://github.com/yashidao)  
 Julie [@jptsr](https://github.com/jptsr)  
-**Front**  
+***-Front-***  
 Fydélis [@fidelysnadison](https://github.com/fidelysnadison)  
 Elena [@tozurelena](https://github.com/tozurelena)  
 Mara [@mara85kh](https://github.com/mara85kh)
