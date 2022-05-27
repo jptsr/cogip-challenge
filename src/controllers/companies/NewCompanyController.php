@@ -41,7 +41,7 @@ class NewCompanyController extends Controller
                 }
             }
             for ($m = 0; $m < 5; $m++) {
-                if ($arrKeys[$m] == 'phone') { // normalement le phone n'est pas utilisé
+                if ($arrKeys[$m] == 'phone') { 
                     $phoneCompanyValidation = new ValidateNewCompany();
                     $phoneCompanyValidation->validationPhone($m, $arrValues, $arrKeys, $arrSession);
                 } elseif ($arrKeys[$m] == 'tva') {

@@ -9,8 +9,7 @@ ob_start(); ?>
 <div class="container ">
 	<div class="row align-items-center">
 		<h2 class="mb-5 mt-5 text-center">Ajout nouvelle société</h2>
-	</div>
-
+	</div>	
 	<div class="row justify-content-center py-5">
 		<div class="col-6">
 			<form action="" method="post">

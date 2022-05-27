@@ -27,4 +27,11 @@ class CreateData
         $stmt->execute();
         $stmt->closeCursor();
     }
+    public function CreateNewInvoice($table_name, $facture_number, $date, $id_contact, $id_company, $id_type)
+    {
+        $stmt = $this->database->prepare("INSERT INTO $table_name VALUES (0, '$facture_number', '$date', '$id_contact', '$id_company' '$id_type') ");
+
+        $stmt->execute();
+        $stmt->closeCursor();
+    }
 }
